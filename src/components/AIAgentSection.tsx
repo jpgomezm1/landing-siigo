@@ -1,9 +1,8 @@
-
 import { useState, useEffect, useRef } from 'react';
 
 const AIAgentSection = () => {
   const [isInView, setIsInView] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,106 +21,123 @@ const AIAgentSection = () => {
   }, []);
   
   return (
-    <section id="ai-agent" ref={sectionRef} className="section-container relative overflow-hidden">
+    <section id="ai-agent" ref={sectionRef} className="section-container relative overflow-hidden py-24">
       {/* Background gradient effect */}
       <div className="absolute -top-80 -right-80 w-96 h-96 bg-irrelevant-primary opacity-10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-80 -left-80 w-96 h-96 bg-purple-600 opacity-10 rounded-full blur-3xl"></div>
       
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Image */}
+        {/* Image with Chat bubbles */}
         <div className={`relative ${isInView ? 'animate-float' : ''}`}>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-irrelevant-primary to-purple-600 opacity-20 rounded-full blur-xl transform scale-90"></div>
             <img 
               src="https://storage.googleapis.com/cluvi/irrelevant-accountant.png" 
-              alt="Asistente Contable IA"
+              alt="Mr. Irrelevant - Tu Asistente Contable"
               className="relative z-10 mx-auto max-w-full"
               style={{ maxHeight: '500px' }}
             />
+            
+            {/* Name badge */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-irrelevant-primary text-white px-4 py-2 rounded-lg font-bold shadow-lg">
+              MR. IRRELEVANT
+            </div>
           </div>
           
           {/* Chat bubbles */}
-          <div className={`absolute top-10 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '180px', animationDelay: '0.3s' }}>
-            <p className="text-sm font-medium">¡Hola! Soy tu asistente contable virtual 👋</p>
+          <div className={`absolute top-14 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.3s' }}>
+            <p className="text-sm font-medium">¡Hola! Soy Mr. Irrelevant, tu contador virtual en Siigo disponible 24/7 👋</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
           
-          <div className={`absolute top-1/3 -right-4 bg-irrelevant-primary text-white p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '180px', animationDelay: '0.6s' }}>
-            <p className="text-sm font-medium">Puedo procesar tus facturas 24/7 sin errores ⚡</p>
+          <div className={`absolute top-1/3 -right-4 bg-irrelevant-primary text-white p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.6s' }}>
+            <p className="text-sm font-medium">Puedo facturar y causar directamente en Siigo sin importar la hora o el día ⚡</p>
             <div className="absolute right-4 -bottom-2 w-4 h-4 bg-irrelevant-primary transform rotate-45"></div>
           </div>
           
-          <div className={`absolute bottom-20 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '180px', animationDelay: '0.9s' }}>
-            <p className="text-sm font-medium">Solo envíame una imagen o PDF y lo haré automáticamente 🤖</p>
+          <div className={`absolute bottom-20 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.9s' }}>
+            <p className="text-sm font-medium">Nunca tomo vacaciones, trabajo fines de semana y estoy en tu bolsillo a través de WhatsApp 📱</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
         </div>
         
         {/* Content */}
         <div>
-          <span className="badge-primary inline-block mb-4">INNOVACIÓN</span>
+          
           <h2 className="mb-6">
-            CONOCE A TU NUEVO
-            <span className="block bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text">
-              ASISTENTE CONTABLE VIRTUAL
-            </span>
+            CONOCE A 
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> MR. IRRELEVANT</span>
           </h2>
           
-          <p className="mb-8 text-lg">
-            Tu contador IA que nunca duerme, no comete errores y está disponible 24/7 para procesar toda tu información contable en tiempo real.
+          <p className="mb-6 text-lg">
+            Tu asistente contable virtual que trabaja directamente en Siigo las 24 horas, todos los días. Nunca pide vacaciones, trabaja fines de semana y está siempre disponible desde tu celular para mantener tu contabilidad al día.
           </p>
+          
+          
           
           <div className="space-y-6 mb-10">
             <div className="flex items-start">
-              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-irrelevant-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4 flex-shrink-0">
+                <svg className="h-6 w-6 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6L20 6M20 6V9M20 6L13 13M12 11L4 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Simple</h4>
+                <h4 className="text-lg font-bold mb-1">Sin limitaciones de horario</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Solo reenvía un correo o envía una foto por WhatsApp y tu Agente IA hará el resto.
+                  Factura a cualquier hora, incluso durante fines de semana y noches. Cierra negocios sin retrasos.
                 </p>
               </div>
             </div>
             
             <div className="flex items-start">
-              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-irrelevant-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4 flex-shrink-0">
+                <svg className="h-6 w-6 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Inteligente</h4>
+                <h4 className="text-lg font-bold mb-1">Perfección contable</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Reconoce, clasifica y causa automáticamente cualquier tipo de factura con precisión.
+                  Causación precisa sin errores humanos. Mantén tu información contable al día con la DIAN.
                 </p>
               </div>
             </div>
             
             <div className="flex items-start">
-              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-irrelevant-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="bg-irrelevant-interactive p-3 rounded-full mr-4 flex-shrink-0">
+                <svg className="h-6 w-6 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 8L21 12M21 12L17 16M21 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Disponible 24/7</h4>
+                <h4 className="text-lg font-bold mb-1">Simplicidad por WhatsApp</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Procesa facturas incluso fuera de horario laboral, sin demoras ni tiempos de espera.
+                  Accede desde tu celular con un simple mensaje. Es como tener un contador en tu bolsillo.
                 </p>
               </div>
             </div>
           </div>
           
+          <div className="flex items-center bg-irrelevant-primary/10 rounded-xl p-4 mb-8">
+            <div className="mr-4">
+              <svg className="w-12 h-12 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-bold mb-1">Integración perfecta con Siigo</h4>
+              <p className="text-sm">Todas las operaciones se registran directamente en tu sistema Siigo sin pasos intermedios</p>
+            </div>
+          </div>
+          
           <a 
-            href="https://wa.me/1234567890?text=Quiero%20mi%20asistente%20contable%20IA"
+            href="https://wa.me/1234567890?text=Quiero%20a%20Mr.%20Irrelevant%20como%20mi%20contador%20virtual"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-button inline-flex items-center"
+            className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 inline-flex items-center"
           >
-            👉 QUIERO MI ASISTENTE CONTABLE IA
+            QUIERO A MR. IRRELEVANT EN MI EMPRESA
           </a>
         </div>
       </div>

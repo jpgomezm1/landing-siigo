@@ -1,10 +1,11 @@
-
 import { useEffect, useRef, useState } from 'react';
 
 const DemoSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [progress, setProgress] = useState(0);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,112 +47,170 @@ const DemoSection = () => {
     }
   };
   
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(!isMuted);
+  };
+  
+  const updateProgress = () => {
+    if (!videoRef.current) return;
+    const value = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+    setProgress(value);
+  };
+  
   return (
-    <section className="bg-gradient-to-br from-irrelevant-interactive to-irrelevant-background py-24">
+    <section className="py-24 bg-gradient-to-b from-irrelevant-background to-irrelevant-background/80">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <span className="badge-primary inline-block mb-4">DEMOSTRACIÓN</span>
+        <div className="text-center mb-12">
+          <div className="inline-block text-irrelevant-primary text-sm font-semibold mb-4">
+            <span className="bg-irrelevant-primary/10 px-4 py-2 rounded-full uppercase tracking-wider">Ver para creer</span>
+          </div>
           <h2 className="mb-6">
             Mira cómo 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> transformamos </span>
-            tu operación contable
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> automatizamos </span>
+            tu área contable
           </h2>
-          <p className="max-w-3xl mx-auto">
-            Una breve demostración de cómo Irrelevant automatiza tus procesos de facturación y causación.
+          <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
+            En esta demostración podrás ver el sistema en acción. Así de fácil transformamos tus facturas en datos listos para usar en Siigo.
           </p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
-          {/* Video Player */}
-          <div className="relative aspect-video bg-black">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              poster="https://storage.googleapis.com/cluvi/irrelevant/video-poster.jpg"
-              playsInline
-            >
-              <source src="https://storage.googleapis.com/cluvi/irrelevant/demo-video.mp4" type="video/mp4" />
-              <track 
-                kind="captions"
-                label="Spanish"
-                src="https://storage.googleapis.com/cluvi/irrelevant/captions.vtt" 
-                srcLang="es" 
-                default
-              />
-              Your browser does not support the video tag.
-            </video>
-            
-            {/* Play/Pause Overlay */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity cursor-pointer"
-              onClick={togglePlayPause}
-            >
-              {!isPlaying && (
-                <div className="w-20 h-20 rounded-full bg-irrelevant-primary flex items-center justify-center animate-pulse-glow">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              )}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Video Container */}
+          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-irrelevant-component border border-irrelevant-border/30">
+            {/* Video Gradient Border Effect */}
+            <div className="absolute inset-0 rounded-xl p-0.5 bg-gradient-to-r from-irrelevant-primary/30 to-purple-400/30 z-0">
+              <div className="w-full h-full bg-irrelevant-component rounded-xl"></div>
             </div>
             
-            {/* CTA Button Overlay */}
-            <div className="absolute bottom-6 right-6">
-              <a 
-                href="https://wa.me/1234567890?text=Quiero%20implementar%20esta%20solución%20en%20mi%20empresa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-irrelevant-primary hover:bg-opacity-90 text-white font-bold py-3 px-5 rounded-lg shadow-lg transition-all duration-300 flex items-center"
-              >
-                👉 Quiero implementarlo
-              </a>
+            {/* Main Video Element */}
+            <div className="relative z-10 rounded-lg overflow-hidden">
+              <div className="aspect-video bg-black/20 relative overflow-hidden">
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-contain"
+                  playsInline
+                  muted={isMuted}
+                  onTimeUpdate={updateProgress}
+                  poster="https://storage.googleapis.com/cluvi/irrelevant/video-poster.jpg"
+                >
+                  <source src="https://storage.googleapis.com/cluvi/facturacion_AI.mp4" type="video/mp4" />
+                  <track 
+                    kind="captions"
+                    label="Spanish"
+                    src="https://storage.googleapis.com/cluvi/irrelevant/captions.vtt" 
+                    srcLang="es" 
+                    default
+                  />
+                  Su navegador no soporta videos.
+                </video>
+                
+                {/* Play/Pause Overlay */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity cursor-pointer group"
+                  onClick={togglePlayPause}
+                >
+                  {!isPlaying && (
+                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 rounded-full bg-irrelevant-primary/90 flex items-center justify-center shadow-lg shadow-irrelevant-primary/30">
+                        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Bottom Controls */}
+                <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 transition-opacity ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+                  {/* Progress bar */}
+                  <div className="h-1 w-full bg-white/20 rounded-full mb-3 cursor-pointer">
+                    <div 
+                      className="h-full bg-irrelevant-primary rounded-full relative"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center space-x-3">
+                      <button 
+                        onClick={togglePlayPause}
+                        className="text-white hover:text-irrelevant-primary transition-colors"
+                        aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
+                      >
+                        {isPlaying ? (
+                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 4H6V20H10V4Z" fill="currentColor" />
+                            <path d="M18 4H14V20H18V4Z" fill="currentColor" />
+                          </svg>
+                        ) : (
+                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor" />
+                          </svg>
+                        )}
+                      </button>
+                      
+                      <button 
+                        onClick={toggleMute}
+                        className="text-white hover:text-irrelevant-primary transition-colors"
+                        aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+                      >
+                        {isMuted ? (
+                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="currentColor" />
+                            <path d="M23 9L17 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M17 9L23 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        ) : (
+                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="currentColor" />
+                            <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M19.07 5.93C20.9447 7.80528 21.9979 10.3447 21.9979 13C21.9979 15.6553 20.9447 18.1947 19.07 20.07" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        )}
+                      </button>
+                    </div>
+                    
+                    <span className="text-sm text-white">Automatización de Facturación</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* Video Controls */}
-          <div className="bg-irrelevant-component p-4">
-            <div className="flex flex-wrap items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <button 
-                  onClick={togglePlayPause}
-                  className="text-white hover:text-irrelevant-primary transition-colors"
-                  aria-label={isPlaying ? "Pause video" : "Play video"}
-                >
-                  {isPlaying ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )}
-                </button>
-                
-                <div className="text-sm text-irrelevant-textSecondary">Automatización de facturación y causación</div>
+          {/* Title and Description below video */}
+          <div className="mt-8 text-center">
+            <h3 className="text-xl font-bold mb-4">Elimina la digitación manual en 3 simples pasos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+              <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
+                <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">1</div>
+                <h4 className="font-bold mb-2">Envía la información</h4>
+                <p className="text-sm text-irrelevant-textSecondary">Por WhatsApp, correo o subiendo un archivo</p>
               </div>
-              
-              <div className="flex items-center space-x-2">
-                <button 
-                  className="text-white hover:text-irrelevant-primary transition-colors"
-                  aria-label="Enable captions"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                  </svg>
-                </button>
-                
-                <button 
-                  className="text-white hover:text-irrelevant-primary transition-colors"
-                  aria-label="Full screen"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-                  </svg>
-                </button>
+              <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
+                <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">2</div>
+                <h4 className="font-bold mb-2">Procesamiento automático</h4>
+                <p className="text-sm text-irrelevant-textSecondary">El sistema extrae todos los datos importantes</p>
+              </div>
+              <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
+                <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">3</div>
+                <h4 className="font-bold mb-2">Aparece en Siigo</h4>
+                <p className="text-sm text-irrelevant-textSecondary">Sin errores y listo para usar</p>
               </div>
             </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="text-center mt-10">
+            <a 
+              href="https://wa.me/1234567890?text=Me%20interesa%20la%20automatización%20de%20facturas%20que%20vi%20en%20el%20video"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 inline-flex items-center"
+            >
+              QUIERO AUTOMATIZAR MI ÁREA CONTABLE
+            </a>
           </div>
         </div>
       </div>

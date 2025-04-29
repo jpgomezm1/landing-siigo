@@ -1,173 +1,257 @@
-
 import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const UseCasesSection = () => {
   const [activeTab, setActiveTab] = useState("invoicing");
   
+  const invoicingCases = [
+    {
+      title: "Equipos comerciales en diferentes ubicaciones",
+      description: "Tus vendedores pueden registrar ventas desde cualquier lugar simplemente enviando una foto del pedido o usando nuestro formulario simple.",
+      benefits: ["Facturación inmediata", "Registro de ventas desde celular"],
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    },
+    {
+      title: "Puntos de venta físicos",
+      description: "Factura en segundos con solo una foto del pedido. Ideal para negocios con múltiples sucursales o puntos de despacho.",
+      benefits: ["Funciona con fotos del pedido", "Facturas listas en segundos"],
+      icon: (
+        <svg className="w-8 h-8 text-indigo-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 21V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V21M19 21L21 21M19 21H14M5 21L3 21M5 21H10M9 6.99998H10M9 11H10M14 6.99998H15M14 11H15M10 16H14C14.5523 16 15 16.4477 15 17V21M10 21V17C10 16.4477 9.55228 16 9 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    },
+    {
+      title: "Tiendas en línea",
+      description: "Conectamos tu tienda online con Siigo automáticamente. Las ventas se convierten en facturas sin que tengas que hacer nada.",
+      benefits: ["Funciona con cualquier tienda virtual", "Sin digitación manual"],
+      icon: (
+        <svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    }
+  ];
+  
+  const causationCases = [
+    {
+      title: "Facturas que llegan por correo",
+      description: "Simplemente reenvía los correos con facturas a nuestra dirección y nosotros nos encargamos del resto. Las facturas aparecerán automáticamente en Siigo.",
+      benefits: ["Sin trabajo manual", "Todos los datos se capturan solos"],
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    },
+    {
+      title: "Facturas físicas o fotos",
+      description: "Toma una foto de la factura física o envíala por WhatsApp. El sistema la lee y la registra automáticamente en Siigo.",
+      benefits: ["Funciona con fotos", "Sin errores de digitación"],
+      icon: (
+        <svg className="w-8 h-8 text-indigo-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 16L8.58579 11.4142C9.36683 10.6332 10.6332 10.6332 11.4142 11.4142L16 16M14 14L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20 14M14 8H14.01M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    },
+    {
+      title: "Documentos electrónicos (DIAN)",
+      description: "Sistema compatible con facturas electrónicas de la DIAN. Procesamos estos documentos automáticamente sin que tengas que preocuparte.",
+      benefits: ["Cumple con normativas", "Procesamiento automático"],
+      icon: (
+        <svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 21H17C18.1046 21 19 20.1046 19 19V9.41421C19 9.149 18.8946 8.89464 18.7071 8.70711L13.2929 3.29289C13.1054 3.10536 12.851 3 12.5858 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M13 3V8C13 8.55228 13.4477 9 14 9H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    }
+  ];
+  
+  const renderCaseCards = (cases) => {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cases.map((item, index) => (
+          <div 
+            key={index} 
+            className="bg-gradient-to-br from-irrelevant-component to-irrelevant-component/80 rounded-xl border border-irrelevant-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-irrelevant-primary/10 hover:border-irrelevant-primary/30"
+          >
+            <div className="p-6">
+              <div className="w-12 h-12 rounded-lg bg-irrelevant-background flex items-center justify-center mb-4">
+                {item.icon}
+              </div>
+              
+              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+              
+              <p className="text-sm text-irrelevant-textSecondary mb-6">
+                {item.description}
+              </p>
+              
+              <div className="pt-4 border-t border-irrelevant-border">
+                {item.benefits.map((benefit, i) => (
+                  <div key={i} className="flex items-center mb-2 last:mb-0">
+                    <div className="w-2 h-2 rounded-full bg-irrelevant-primary mr-2"></div>
+                    <span className="text-sm">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+  
   return (
-    <section id="use-cases" className="section-container">
+    <section id="use-cases" className="section-container py-24 bg-gradient-to-b from-irrelevant-background to-irrelevant-background/90">
       <div className="text-center mb-16">
-        <span className="badge-primary inline-block mb-4">CASOS DE USO</span>
+        <div className="inline-block text-irrelevant-primary text-sm font-semibold mb-4">
+          <span className="bg-irrelevant-primary/10 px-4 py-2 rounded-full uppercase tracking-wider">Casos de uso</span>
+        </div>
         <h2 className="mb-6">
           Solución para 
           <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> cada necesidad </span>
           contable
         </h2>
-        <p className="max-w-3xl mx-auto">
+        <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
           Irrelevant se adapta a diferentes escenarios de negocio, automatizando procesos específicos según tus necesidades.
         </p>
       </div>
       
-      <Tabs defaultValue="invoicing" className="w-full max-w-5xl mx-auto" onValueChange={setActiveTab}>
-        <TabsList className="w-full justify-center mb-10 bg-irrelevant-interactive p-1 rounded-full">
-          <TabsTrigger 
-            value="invoicing" 
-            className={`py-3 px-6 rounded-full text-base transition-all ${
+      {/* Tabs navigation */}
+      <div className="flex justify-center mb-12">
+        <div className="bg-irrelevant-interactive p-1.5 rounded-full inline-flex">
+          <button 
+            onClick={() => setActiveTab("invoicing")}
+            className={`py-3 px-6 rounded-full text-sm font-medium transition-all ${
               activeTab === 'invoicing' 
-                ? 'bg-irrelevant-primary text-white shadow-lg' 
+                ? 'bg-irrelevant-primary text-white shadow-md' 
                 : 'text-white hover:text-irrelevant-primary'
             }`}
           >
             Facturación Automatizada
-          </TabsTrigger>
-          <TabsTrigger 
-            value="causation" 
-            className={`py-3 px-6 rounded-full text-base transition-all ${
+          </button>
+          <button 
+            onClick={() => setActiveTab("causation")}
+            className={`py-3 px-6 rounded-full text-sm font-medium transition-all ${
               activeTab === 'causation' 
-                ? 'bg-irrelevant-primary text-white shadow-lg' 
+                ? 'bg-irrelevant-primary text-white shadow-md' 
                 : 'text-white hover:text-irrelevant-primary'
             }`}
           >
             Causación Inteligente
-          </TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="invoicing" className="mt-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">📋</div>
-              <h3 className="text-xl font-bold mb-3">Equipos comerciales dispersos</h3>
-              <p className="text-sm flex-grow">
-                Tus vendedores pueden cargar ventas desde cualquier lugar con una interfaz rápida o simplemente enviando una imagen del pedido.
+          </button>
+        </div>
+      </div>
+      
+      {/* Illustration/Diagram */}
+      <div className="max-w-4xl mx-auto mb-16 p-6 bg-irrelevant-component/50 rounded-xl border border-irrelevant-border">
+        {activeTab === 'invoicing' ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text">
+                Deja que tus facturas se hagan solas
+              </h3>
+              <p className="text-irrelevant-textSecondary mb-6">
+                Olvídate de digitar facturas manualmente. Nuestro sistema lo hace todo por ti, sin complicaciones técnicas.
               </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Facturación en tiempo real</span>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">1</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Recibe los pedidos</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">Por WhatsApp, correo o foto - ¡tú eliges cómo!</p>
+                  </div>
                 </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Captura móvil de pedidos</span>
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">2</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Nosotros los procesamos</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">Nuestro sistema lee todos los datos automáticamente</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">3</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Aparece en Siigo</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">La factura se genera automáticamente en tu sistema</p>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">🏬</div>
-              <h3 className="text-xl font-bold mb-3">Despachos físicos desde puntos de venta</h3>
-              <p className="text-sm flex-grow">
-                Factura en segundos con solo una foto del pedido. Ideal para negocios con múltiples puntos de despacho o venta.
-              </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Reconocimiento de pedidos</span>
-                </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Procesamiento en segundos</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">🛒</div>
-              <h3 className="text-xl font-bold mb-3">Tiendas eCommerce</h3>
-              <p className="text-sm flex-grow">
-                Integración vía API o desde el correo para facturación automática de las compras realizadas en tu tienda online.
-              </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Integración con plataformas</span>
-                </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Facturación automática</span>
-                </div>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-xs">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl transform rotate-3"></div>
+                <img 
+                  src="https://storage.googleapis.com/cluvi/causando.png" 
+                  alt="Facturación automatizada" 
+                  className="relative z-10 rounded-xl shadow-lg object-cover w-full"
+                />
               </div>
             </div>
           </div>
-        </TabsContent>
-        
-        <TabsContent value="causation" className="mt-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">📧</div>
-              <h3 className="text-xl font-bold mb-3">Facturas por email</h3>
-              <p className="text-sm flex-grow">
-                Solo reenvíalas → el sistema las clasifica y causa automáticamente, identificando toda la información relevante.
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text">
+                Deja de digitar facturas de proveedores
+              </h3>
+              <p className="text-irrelevant-textSecondary mb-6">
+                Olvídate de introducir facturas manualmente en el sistema. Nuestro sistema lo hace por ti, sin ningún conocimiento técnico.
               </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Procesamiento automatizado</span>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">1</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Envía las facturas</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">Reenvía correos, toma fotos o comparte documentos de la DIAN</p>
+                  </div>
                 </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Extracción inteligente de datos</span>
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">2</div>
+                  <div>
+                    <h4 className="font-bold mb-1">El sistema las lee</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">Detecta todos los datos importantes: monto, fecha, impuestos, etc.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mr-3 mt-0.5">3</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Listo en Siigo</h4>
+                    <p className="text-sm text-irrelevant-textSecondary">La causación se registra automáticamente en tu sistema</p>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">📸</div>
-              <h3 className="text-xl font-bold mb-3">Facturas físicas o fotos</h3>
-              <p className="text-sm flex-grow">
-                Sube una imagen o envíala por WhatsApp, y el sistema hace la causación por ti, extrayendo todos los datos necesarios.
-              </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Reconocimiento de imágenes</span>
-                </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">OCR de alta precisión</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="card-irrelevant flex flex-col">
-              <div className="text-3xl mb-4">🧾</div>
-              <h3 className="text-xl font-bold mb-3">XML o PDF</h3>
-              <p className="text-sm flex-grow">
-                Compatible con los formatos estándar contables como los de la DIAN, procesándolos de forma precisa y estructurada.
-              </p>
-              <div className="mt-6 pt-4 border-t border-irrelevant-interactive">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Compatibilidad estándar</span>
-                </div>
-                <div className="flex items-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-sm">Interpretación normativa</span>
-                </div>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-xs">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl transform -rotate-3"></div>
+                <img 
+                  src="https://storage.googleapis.com/cluvi/cargando.png" 
+                  alt="Causación inteligente" 
+                  className="relative z-10 rounded-xl shadow-lg object-cover w-full"
+                />
               </div>
             </div>
           </div>
-        </TabsContent>
-      </Tabs>
+        )}
+      </div>
+      
+      {/* Cards */}
+      {activeTab === 'invoicing' ? renderCaseCards(invoicingCases) : renderCaseCards(causationCases)}
       
       <div className="text-center mt-16">
         <a 
           href="https://wa.me/1234567890?text=Quiero%20implementar%20esta%20solución%20en%20mi%20empresa"
           target="_blank"
           rel="noopener noreferrer"
-          className="cta-button inline-flex items-center"
+          className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30"
         >
-          👉 Quiero implementar esto en mi empresa
+          <span className="inline-flex items-center font-bold">
+            QUIERO IMPLEMENTAR ESTO EN MI EMPRESA
+          </span>
         </a>
       </div>
     </section>

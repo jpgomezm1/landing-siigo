@@ -37,7 +37,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <PainTriggersSection />
-      <SolutionArchitecture />
+      {/* <SolutionArchitecture /> */}
       <UseCasesSection />
       <DemoSection />
       <AIAgentSection />
