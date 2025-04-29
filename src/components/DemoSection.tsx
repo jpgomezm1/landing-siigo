@@ -95,7 +95,7 @@ const DemoSection = () => {
                   onTimeUpdate={updateProgress}
                   poster="https://storage.googleapis.com/cluvi/irrelevant/video-poster.jpg"
                 >
-                  <source src="https://storage.googleapis.com/cluvi/facturacion_AI.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/cluvi/Tutorial_Facturas.mp4" type="video/mp4" />
                   <track 
                     kind="captions"
                     label="Spanish"
