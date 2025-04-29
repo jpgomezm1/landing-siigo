@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,15 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				// Irrelevant color palette
+				irrelevant: {
+					background: '#0F111A',
+					component: '#161827',
+					interactive: '#1E2235',
+					primary: '#8C7DF7',
+					text: '#FFFFFF',
+					textSecondary: '#B8B8C0',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -63,6 +73,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'hero-pattern': 'linear-gradient(to bottom right, rgba(14, 17, 26, 0.9), rgba(22, 24, 39, 0.95)), url("/hero-background.png")',
+				'gradient-primary': 'linear-gradient(45deg, #8C7DF7, #9F8FFF)',
+			},
+			boxShadow: {
+				'irrelevant': '0 10px 30px -10px rgba(140, 125, 247, 0.3)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +101,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px 0 rgba(140, 125, 247, 0.5)' },
+					'50%': { boxShadow: '0 0 20px 5px rgba(140, 125, 247, 0.7)' },
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'slide-in': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite',
+				'float': 'float 4s ease-in-out infinite',
+				'slide-in': 'slide-in 0.5s ease-out forwards'
+			},
+			fontFamily: {
+				'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 			}
 		}
 	},
