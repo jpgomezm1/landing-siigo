@@ -23,7 +23,7 @@ const HeroSection = () => {
             playsInline
             className="object-cover w-full h-full opacity-30"
           >
-            <source src="https://storage.googleapis.com/cluvi/irrelevant/hotel-service-bg.mp4" type="video/mp4" />
+            <source src="https://storage.googleapis.com/cluvi/irrelevant/data-flow-bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -34,52 +34,52 @@ const HeroSection = () => {
         <div className="flex flex-col items-center text-center">
           
           <h1 className="font-jakarta font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 w-full">
-            TU CONCIERGE DEBERÍA 
+            TUS FACTURAS DEBERÍAN 
             <span className="block bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text">
-              ESTAR DISPONIBLE 24/7
+              HACERSE SOLAS
             </span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white mb-6 sm:mb-8 w-full">
-            Automatiza la atención a tus huéspedes. Mejora su experiencia sin aumentar costos operativos. 
-            <span className="font-bold text-irrelevant-primary"> Tu AI Concierge multilingüe responde en segundos.</span>
+            Automatiza tu facturación y causación. Escala ventas sin aumentar costos operativos. 
+            <span className="font-bold text-irrelevant-primary"> En menos de 5 días estás facturando sin digitar.</span>
           </p>
           
           <a 
-            href="https://wa.me/1234567890?text=Quiero%20implementar%20el%20AI%20Concierge%20en%20mi%20hotel"
+            href="https://wa.me/1234567890?text=Quiero%20automatizar%20mi%20facturación%20con%20Irrelevant"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-3 sm:py-4 px-4 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 text-xs sm:text-sm md:text-base w-full sm:w-auto mx-auto"
           >
             <span className="inline-flex items-center justify-center font-bold">
-              QUIERO UN AI CONCIERGE PARA MI HOTEL
+              QUIERO AUTOMATIZAR MI FACTURACIÓN
             </span>
           </a>
           
           <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 justify-center items-center w-full">
             <div className="flex items-center bg-irrelevant-background/70 border border-irrelevant-border py-2 px-3 sm:px-4 rounded-lg w-full max-w-xs mx-auto">
               <svg className="min-w-4 w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-xs">Disponible 24/7</span>
+              <span className="text-xs">Compatible 100% con Siigo</span>
             </div>
             <div className="flex items-center bg-irrelevant-background/70 border border-irrelevant-border py-2 px-3 sm:px-4 rounded-lg w-full max-w-xs mx-auto">
               <svg className="min-w-4 w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 5H21V19H3V5Z M3 12H21 M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 4V6M12 8V12M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-xs">Multilingüe</span>
+              <span className="text-xs">Potenciado por IA avanzada</span>
             </div>
             <div className="flex items-center bg-irrelevant-background/70 border border-irrelevant-border py-2 px-3 sm:px-4 rounded-lg w-full max-w-xs mx-auto">
               <svg className="min-w-4 w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-xs">IA Avanzada</span>
+              <span className="text-xs">Parte del ecosistema Irrelevant</span>
             </div>
             <div className="flex items-center bg-irrelevant-background/70 border border-irrelevant-border py-2 px-3 sm:px-4 rounded-lg w-full max-w-xs mx-auto">
               <svg className="min-w-4 w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-xs">Implementación en 6 semanas</span>
+              <span className="text-xs">Implementación en 5 días</span>
             </div>
           </div>
         </div>

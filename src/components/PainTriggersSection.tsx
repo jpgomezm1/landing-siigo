@@ -15,34 +15,34 @@ const PainTriggersSection = () => {
 
   const painTriggers = [
     {
-      beforeTitle: "Limitaciones para ofrecer servicio 24/7",
-      beforeDescription: "Tu equipo humano no puede estar disponible todo el tiempo, y contratar personal para cubrir todos los horarios es costoso e ineficiente para tu operación hotelera.",
-      afterTitle: "Asistencia ininterrumpida 24/7/365",
-      afterDescription: "El AI Concierge está siempre disponible, no toma vacaciones ni días libres, atendiendo a tus huéspedes incluso en la madrugada sin costo adicional.",
+      beforeTitle: "42 horas/semana en digitación manual",
+      beforeDescription: "Tu equipo contable invierte casi la mitad de su tiempo en tareas repetitivas de entrada de datos",
+      afterTitle: "Solo 2 horas/semana de supervisión",
+      afterDescription: "Reducción del 95% del tiempo operativo, liberando a tu equipo para tareas de mayor valor estratégico",
       beforeIcon: "time",
       afterIcon: "rocket",
     },
     {
-      beforeTitle: "Barreras de idioma con huéspedes internacionales",
-      beforeDescription: "No todo tu personal domina múltiples idiomas, lo que dificulta la comunicación con huéspedes extranjeros y limita tu alcance internacional.",
-      afterTitle: "Comunicación fluida en múltiples idiomas",
-      afterDescription: "Interacción natural y fluida en español e inglés, eliminando por completo las barreras de comunicación con tus huéspedes internacionales.",
+      beforeTitle: "34% de errores por digitación manual",
+      beforeDescription: "Los errores humanos generan reprocesos, inconsistencias contables y problemas de conciliación",
+      afterTitle: "Precisión del 99.7% automatizada",
+      afterDescription: "Elimina virtualmente todos los errores de digitación y garantiza consistencia en tus registros contables",
       beforeIcon: "error",
       afterIcon: "check",
     },
     {
-      beforeTitle: "Sobrecarga de tareas repetitivas",
-      beforeDescription: "Tu personal invierte gran parte de su tiempo respondiendo las mismas preguntas sobre servicios, ubicaciones y recomendaciones locales.",
-      afterTitle: "Liberación del talento humano",
-      afterDescription: "Tu equipo se enfoca en tareas de mayor valor mientras el AI Concierge maneja consultas frecuentes, mejorando la satisfacción laboral y reduciendo rotación.",
+      beforeTitle: "Dependencia del personal para tareas básicas",
+      beforeDescription: "Tu crecimiento está limitado por la capacidad de tu equipo para procesar documentos manualmente",
+      afterTitle: "Liberación del talento para análisis",
+      afterDescription: "Tu equipo puede enfocarse en interpretar datos y tomar decisiones estratégicas, no en procesarlos",
       beforeIcon: "chain",
       afterIcon: "brain",
     },
     {
-      beforeTitle: "Costos operativos elevados",
-      beforeDescription: "Para ofrecer un servicio de calidad continuo, necesitas contratar más personal, aumentando costos de nómina, prestaciones y capacitación.",
-      afterTitle: "Optimización de recursos financieros",
-      afterDescription: "Reduce significativamente tus costos operativos mientras mejoras la experiencia del huésped. Escala tu servicio sin incrementar proporcionalmente tus costos.",
+      beforeTitle: "Crecimiento limitado por capacidad operativa",
+      beforeDescription: "Para vender más necesitas contratar más personal, reduciendo tus márgenes de ganancia",
+      afterTitle: "Escala ventas sin aumentar costos",
+      afterDescription: "Procesa 10x más facturas con el mismo equipo, manteniendo tus costos operativos bajo control",
       beforeIcon: "chart-down",
       afterIcon: "chart-up",
     }
@@ -54,10 +54,10 @@ const PainTriggersSection = () => {
         <div className="text-center mb-16">
           <h2 className="mb-6 text-3xl font-bold relative inline-block">
             De la frustración 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> a la excelencia</span>
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> a la eficiencia</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-irrelevant-textSecondary">
-            Descubre cómo nuestro AI Concierge elimina los principales retos en la atención al huésped y transforma la experiencia de hospedaje.
+            Descubre cómo la automatización inteligente elimina los cuellos de botella más costosos en tus procesos contables.
           </p>
         </div>
         
