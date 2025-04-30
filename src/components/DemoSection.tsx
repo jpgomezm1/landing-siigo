@@ -68,11 +68,11 @@ const DemoSection = () => {
           </div>
           <h2 className="mb-6">
             Mira cómo 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> automatizamos </span>
-            tu área contable
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> revolucionamos </span>
+            la experiencia del huésped
           </h2>
           <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
-            En esta demostración podrás ver el sistema en acción. Así de fácil transformamos tus facturas en datos listos para usar en Siigo.
+            En esta demostración podrás ver el AI Concierge en acción. Así de simple es transformar la atención al huésped en una experiencia excepcional.
           </p>
         </div>
         
@@ -93,9 +93,9 @@ const DemoSection = () => {
                   playsInline
                   muted={isMuted}
                   onTimeUpdate={updateProgress}
-                  poster="https://storage.googleapis.com/cluvi/irrelevant/video-poster.jpg"
+                  poster="https://storage.googleapis.com/cluvi/irrelevant/concierge-poster.jpg"
                 >
-                  <source src="https://storage.googleapis.com/cluvi/facturacion_AI.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/cluvi/ai_concierge_demo.mp4" type="video/mp4" />
                   <track 
                     kind="captions"
                     label="Spanish"
@@ -172,7 +172,7 @@ const DemoSection = () => {
                       </button>
                     </div>
                     
-                    <span className="text-sm text-white">Automatización de Facturación</span>
+                    <span className="text-sm text-white">AI Concierge en acción</span>
                   </div>
                 </div>
               </div>
@@ -181,22 +181,22 @@ const DemoSection = () => {
           
           {/* Title and Description below video */}
           <div className="mt-8 text-center">
-            <h3 className="text-xl font-bold mb-4">Elimina la digitación manual en 3 simples pasos</h3>
+            <h3 className="text-xl font-bold mb-4">Atención al huésped perfecta en 3 simples pasos</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
                 <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">1</div>
-                <h4 className="font-bold mb-2">Envía la información</h4>
-                <p className="text-sm text-irrelevant-textSecondary">Por WhatsApp, correo o subiendo un archivo</p>
+                <h4 className="font-bold mb-2">El huésped pregunta</h4>
+                <p className="text-sm text-irrelevant-textSecondary">Por WhatsApp, web o cualquier canal disponible</p>
               </div>
               <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
                 <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">2</div>
-                <h4 className="font-bold mb-2">Procesamiento automático</h4>
-                <p className="text-sm text-irrelevant-textSecondary">El sistema extrae todos los datos importantes</p>
+                <h4 className="font-bold mb-2">Procesamiento inteligente</h4>
+                <p className="text-sm text-irrelevant-textSecondary">El AI Concierge interpreta y contextualiza la consulta</p>
               </div>
               <div className="bg-irrelevant-component p-4 rounded-lg border border-irrelevant-border">
                 <div className="w-8 h-8 rounded-full bg-irrelevant-primary/20 text-irrelevant-primary flex items-center justify-center mx-auto mb-3">3</div>
-                <h4 className="font-bold mb-2">Aparece en Siigo</h4>
-                <p className="text-sm text-irrelevant-textSecondary">Sin errores y listo para usar</p>
+                <h4 className="font-bold mb-2">Respuesta personalizada</h4>
+                <p className="text-sm text-irrelevant-textSecondary">Información precisa y personalizada en segundos</p>
               </div>
             </div>
           </div>
@@ -204,12 +204,12 @@ const DemoSection = () => {
           {/* CTA Button */}
           <div className="text-center mt-10">
             <a 
-              href="https://wa.me/1234567890?text=Me%20interesa%20la%20automatización%20de%20facturas%20que%20vi%20en%20el%20video"
+              href="https://wa.me/1234567890?text=Me%20interesa%20el%20AI%20Concierge%20que%20vi%20en%20el%20video"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 inline-flex items-center"
             >
-              QUIERO AUTOMATIZAR MI ÁREA CONTABLE
+              QUIERO UN AI CONCIERGE PARA MI HOTEL
             </a>
           </div>
         </div>

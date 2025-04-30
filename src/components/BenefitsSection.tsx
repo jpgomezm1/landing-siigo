@@ -51,27 +51,27 @@ const BenefitCard = ({ title, value, description, color, delay = 0 }: BenefitCar
 const BenefitsSection = () => {
   const benefits = [
     {
-      title: "Menos tiempo operativo",
-      value: "95%",
-      description: "Reduce drásticamente el tiempo dedicado a tareas contables manuales, liberando recursos para lo que realmente importa.",
+      title: "Reducción de costos operativos",
+      value: "75%",
+      description: "Reduce drásticamente el gasto en personal de atención a huéspedes, sin sacrificar la calidad del servicio.",
       color: "from-green-500 to-green-400"
     },
     {
-      title: "Errores por digitación",
-      value: "0",
-      description: "Elimina por completo los errores humanos en la entrada de datos, garantizando total precisión en tus registros contables.",
+      title: "Atención continua",
+      value: "24/7",
+      description: "Servicio ininterrumpido todos los días del año. Tus huéspedes nunca quedarán sin atención, sea cual sea su necesidad.",
       color: "from-blue-500 to-blue-400"
     },
     {
-      title: "Escala sin más personal",
-      value: "10x",
-      description: "Procesa diez veces más facturas con el mismo equipo, manteniendo tus costos operativos bajo control mientras creces.",
+      title: "Idiomas disponibles",
+      value: "10+",
+      description: "Comunícate con huéspedes internacionales en su idioma nativo, eliminando barreras y mejorando su experiencia.",
       color: "from-purple-500 to-purple-400"
     },
     {
-      title: "Compatible con Siigo",
-      value: "100%",
-      description: "Integración perfecta con tu sistema Siigo actual, sin modificaciones ni configuraciones complejas.",
+      title: "Retorno de inversión",
+      value: "<2 meses",
+      description: "Recupera tu inversión en tiempo récord gracias al ahorro operativo y el incremento en satisfacción de huéspedes.",
       color: "from-irrelevant-primary to-indigo-400"
     }
   ];
@@ -81,14 +81,14 @@ const BenefitsSection = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <div className="inline-block bg-irrelevant-primary/10 text-irrelevant-primary text-sm font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
-            RESULTADOS CONCRETOS
+            RESULTADOS COMPROBADOS
           </div>
           <h2 className="mb-6">
             Beneficios 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> tangibles y medibles </span>
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> inmediatos y cuantificables </span>
           </h2>
           <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
-            Impacto real en tu operación contable desde el primer día, respaldado por métricas cuantificables.
+            Impacto real en la experiencia de tus huéspedes y en tu operación hotelera desde el primer día de implementación.
           </p>
         </div>
         
@@ -103,6 +103,13 @@ const BenefitsSection = () => {
               delay={index * 100}
             />
           ))}
+        </div>
+        
+        {/* Testimonial Section */}
+        <div className="mt-16 bg-irrelevant-component border border-irrelevant-border rounded-xl p-8 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-irrelevant-primary opacity-5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+          
+          
         </div>
         
       </div>

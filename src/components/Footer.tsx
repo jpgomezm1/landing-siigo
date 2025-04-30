@@ -13,7 +13,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-sm text-irrelevant-textSecondary mb-6 max-w-md">
-              Transformando empresas a través de la automatización inteligente de procesos contables y comerciales. La solución definitiva para facturación y causación automatizada, compatible con Siigo.
+              Transformando hoteles a través de la automatización inteligente de la atencion al huesped. La solución definitiva para el sector hospitality.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-irrelevant-textSecondary hover:text-irrelevant-primary transition-colors">
@@ -39,15 +39,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Solutions - simplified */}
-          <div className="md:col-span-3">
-            <h3 className="text-lg font-bold mb-4">Soluciones</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Facturación Automatizada</a></li>
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Causación Inteligente</a></li>
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Agente Contable IA</a></li>
-            </ul>
-          </div>
           
           {/* Contact - simplified */}
           <div className="md:col-span-4">
