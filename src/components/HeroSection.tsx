@@ -508,8 +508,6 @@ const EnhancedBillingHeroSection = () => {
       <DataParticles />
       <DataFlowEffect />
       <FloatingInvoices />
-      <InvoiceProcessAnimation />
-      <AnimatedStats />
       
       {/* Content */}
       <div className="relative z-20 px-4 sm:px-6 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
