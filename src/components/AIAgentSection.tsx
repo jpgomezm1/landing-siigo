@@ -32,8 +32,8 @@ const AIAgentSection = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-irrelevant-primary to-purple-600 opacity-20 rounded-full blur-xl transform scale-90"></div>
             <img 
-              src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png" 
-              alt="QuoteBot - Tu Asistente de Ventas"
+              src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/vc_irrelevant.png" 
+              alt="InvestFlow AI - Tu Asistente de Inversión"
               className="relative z-10 mx-auto max-w-full"
               style={{ maxHeight: '500px' }}
             />
@@ -46,17 +46,17 @@ const AIAgentSection = () => {
           
           {/* Chat bubbles */}
           <div className={`absolute top-14 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.3s' }}>
-            <p className="text-sm font-medium">¡Hola! Soy Mr.Irrelevant, tu asistente de ventas inteligente que monitorea tus cotizaciones 24/7 👋</p>
+            <p className="text-sm font-medium">¡Hola! Soy Mr.Irrelevant, tu asistente de inversión que procesa documentos y genera insights automáticamente 👋</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
           
           <div className={`absolute top-1/3 -right-4 bg-irrelevant-primary text-white p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.6s' }}>
-            <p className="text-sm font-medium">Te aviso al instante cuando un cliente muestra interés en tu propuesta, para que nunca pierdas una oportunidad ⚡</p>
+            <p className="text-sm font-medium">Analizo múltiples formatos de documentos y extraigo la información clave, ahorrándote 15-20 horas por startup ⚡</p>
             <div className="absolute right-4 -bottom-2 w-4 h-4 bg-irrelevant-primary transform rotate-45"></div>
           </div>
           
           <div className={`absolute bottom-20 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.9s' }}>
-            <p className="text-sm font-medium">Hago seguimiento automático a través de WhatsApp y email cuando detectamos que un cliente está interesado en tu cotización 📱</p>
+            <p className="text-sm font-medium">Evalúo automáticamente la alineación con tu tesis de inversión y genero Investment Memos profesionales de 40 páginas en minutos 📊</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const AIAgentSection = () => {
           </h2>
           
           <p className="mb-6 text-lg">
-            Tu asistente de ventas virtual que monitorea tus cotizaciones las 24 horas, todos los días. Nunca pierde una oportunidad, realiza seguimiento automático y te mantiene informado sobre el comportamiento de tus clientes potenciales.
+            Tu asistente de inversión con IA que transforma el tedioso proceso de due diligence en un flujo eficiente y estructurado. Procesa documentos complejos, extrae insights valiosos y genera Investment Memos profesionales alineados con tu tesis de inversión.
           </p>
           
           <div className="space-y-6 mb-10">
@@ -81,9 +81,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Alertas en tiempo real</h4>
+                <h4 className="text-lg font-bold mb-1">Procesamiento automático de documentos</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Recibe notificaciones inmediatas cuando un cliente abre tu cotización, con datos de cuántas veces y por cuánto tiempo la revisó.
+                  Ingesta documentos en múltiples formatos (PDF, DOCX, PPTX, CSV, XLS) y extrae automáticamente entidades, métricas y elementos clave.
                 </p>
               </div>
             </div>
@@ -95,9 +95,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Seguimiento automático</h4>
+                <h4 className="text-lg font-bold mb-1">Consultas en lenguaje natural</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Envía mensajes personalizados por WhatsApp o email en el momento perfecto, basándose en la interacción del cliente con tu propuesta.
+                  Realiza preguntas específicas sobre la startup y obtén respuestas contextuales con citas exactas a las fuentes originales.
                 </p>
               </div>
             </div>
@@ -109,9 +109,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Priorización inteligente</h4>
+                <h4 className="text-lg font-bold mb-1">Generación de Investment Memos</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Identifica automáticamente cuáles leads están más interesados, permitiéndote enfocar tus esfuerzos en los clientes con mayor potencial.
+                  Crea automáticamente documentos profesionales estructurados con todas las secciones necesarias: resumen ejecutivo, análisis de mercado, evaluación del equipo y más.
                 </p>
               </div>
             </div>
@@ -124,18 +124,18 @@ const AIAgentSection = () => {
               </svg>
             </div>
             <div>
-              <h4 className="font-bold mb-1">Integración con tu CRM</h4>
-              <p className="text-sm">Toda la información se sincroniza directamente con tu sistema de gestión de clientes, manteniendo todo centralizado</p>
+              <h4 className="font-bold mb-1">Evaluación de alineación con tesis de inversión</h4>
+              <p className="text-sm">Análisis automático de compatibilidad entre cada startup y tus criterios de inversión específicos para toma de decisiones más informada</p>
             </div>
           </div>
           
           <a 
-            href="https://wa.me/573183351733?text=Quiero%20a%20QuoteBot%20para%20monitorear%20mis%20cotizaciones"
+            href="https://wa.me/573183351733?text=Quiero%20implementar%20InvestFlow%20en%20mi%20fondo%20de%20inversión"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 inline-flex items-center"
           >
-            QUIERO A MR.IRRELEVANT EN MI EQUIPO DE VENTAS
+            QUIERO MR.IRRELEVANT PARA MI FONDO DE INVERSIÓN
           </a>
         </div>
       </div>

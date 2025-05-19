@@ -51,27 +51,27 @@ const BenefitCard = ({ title, value, description, color, delay = 0 }: BenefitCar
 const BenefitsSection = () => {
   const benefits = [
     {
-      title: "Aumento en tasa de cierre",
-      value: "35%",
-      description: "Incrementa significativamente la conversión de tus propuestas al saber exactamente cuándo y cómo hacer seguimiento a tus prospectos.",
+      title: "Reducción de tiempo de análisis",
+      value: "85%",
+      description: "Reduce drásticamente el tiempo dedicado a analizar cada startup, pasando de 15-20 horas a apenas 2-3 horas por oportunidad de inversión.",
       color: "from-green-500 to-green-400"
     },
     {
-      title: "Reducción del ciclo de venta",
-      value: "40%",
-      description: "Acorta el tiempo desde la cotización hasta el cierre al identificar a los clientes que muestran mayor interés y actuar en el momento perfecto.",
+      title: "Mayor precisión en decisiones",
+      value: "60%",
+      description: "Mejora la calidad de tus decisiones de inversión gracias a análisis más profundos y consistentes, con evaluación automática de alineación a tu tesis.",
       color: "from-blue-500 to-blue-400"
     },
     {
-      title: "Eficiencia en seguimiento",
+      title: "Ahorro en procesos manuales",
       value: "90%",
-      description: "Elimina el seguimiento manual y nunca más olvides dar seguimiento a una cotización, concentrando esfuerzos en los leads más prometedores.",
+      description: "Elimina casi por completo el trabajo repetitivo de recopilación y organización de datos, permitiendo que tu equipo se enfoque en análisis estratégico.",
       color: "from-purple-500 to-purple-400"
     },
     {
-      title: "Visibilidad del proceso",
-      value: "100%",
-      description: "Conoce exactamente qué está pasando con cada propuesta enviada, desde quién la ve hasta cuánto tiempo pasa en cada sección.",
+      title: "Incremento en volumen de análisis",
+      value: "4x",
+      description: "Multiplica la capacidad de tu equipo para evaluar startups, lo que te permite ampliar tu pipeline y considerar más oportunidades de inversión.",
       color: "from-irrelevant-primary to-indigo-400"
     }
   ];
@@ -81,14 +81,14 @@ const BenefitsSection = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <div className="inline-block bg-irrelevant-primary/10 text-irrelevant-primary text-sm font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
-            RESULTADOS CONCRETOS
+            RESULTADOS CUANTIFICABLES
           </div>
           <h2 className="mb-6">
             Beneficios 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> que impactan tus ventas </span>
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> que transforman tu proceso de inversión </span>
           </h2>
           <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
-            Mejora cuantificable en tu proceso comercial desde el primer día, con métricas que se traducen directamente en más ingresos.
+            Optimización medible de todo el flujo de due diligence que se traduce en mejor toma de decisiones, mayor eficiencia y ventaja competitiva para tu fondo.
           </p>
         </div>
         
@@ -110,7 +110,7 @@ const BenefitsSection = () => {
             <svg className="w-6 h-6 text-irrelevant-primary mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span className="text-sm">Estos resultados están basados en datos reales de clientes que implementaron Cotizaciones Inteligentes</span>
+            <span className="text-sm">Estos resultados están basados en datos reales de H20 Capital y otros fondos que implementaron InvestFlow</span>
           </div>
         </div>
       </div>

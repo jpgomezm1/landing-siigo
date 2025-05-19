@@ -37,7 +37,6 @@ const Index = () => {
     <div className="min-h-screen bg-irrelevant-background text-white">
       <Header />
       <HeroSection />
-      <WorkflowSection />
       <PainTriggersSection />
       {/* <SolutionArchitecture /> */}
       <UseCasesSection />

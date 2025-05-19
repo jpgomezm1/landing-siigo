@@ -15,49 +15,49 @@ const PainTriggersSection = () => {
 
   const painTriggers = [
     {
-      beforeTitle: "Propuestas enviadas que nunca reciben respuesta",
-      beforeDescription: "Mandas PDF de cotizaciones y nunca más sabes del cliente, perdiendo oportunidades sin entender por qué",
-      afterTitle: "Seguimiento en tiempo real de cada interacción",
-      afterDescription: "Sabes exactamente cuándo, quién y por cuánto tiempo vio tu propuesta, permitiéndote actuar en el momento perfecto",
+      beforeTitle: "15-20 horas por startup recopilando información",
+      beforeDescription: "Pierdes tiempo valioso buscando datos en múltiples fuentes, correos, documentos y plataformas dispersas",
+      afterTitle: "Centralización de toda la información en minutos",
+      afterDescription: "Ingesta automáticamente documentos de cualquier formato y extrae datos clave para análisis inmediato",
       beforeIcon: "time",
       afterIcon: "rocket",
     },
     {
-      beforeTitle: "65% de cotizaciones olvidadas sin seguimiento",
-      beforeDescription: "Tu equipo comercial olvida hacer seguimiento en el momento oportuno, dejando que leads calientes se enfríen",
-      afterTitle: "Alertas automáticas de interés del cliente",
-      afterDescription: "Recibe notificaciones cuando un cliente muestra interés, permitiendo a tu equipo priorizar leads realmente calientes",
+      beforeTitle: "Análisis manual sin estructura ni sistematización",
+      beforeDescription: "Tu equipo procesa manualmente cada documento, sin metodología clara para extraer insights consistentes",
+      afterTitle: "Procesamiento automatizado con IA contextual",
+      afterDescription: "La plataforma extrae entidades, métricas clave y evalúa automáticamente la alineación con tu tesis de inversión",
       beforeIcon: "error",
       afterIcon: "check",
     },
     {
-      beforeTitle: "No sabes si tus clientes ven tus propuestas",
-      beforeDescription: "Envías cotizaciones en PDF sin forma de saber si fueron abiertas, compartidas o revisadas en detalle",
-      afterTitle: "Analytics completo de cada interacción",
-      afterDescription: "Visualiza exactamente qué secciones interesan más a tus clientes y cuánto tiempo dedicaron a cada detalle de tu propuesta",
+      beforeTitle: "Investment Memos inconsistentes de 40+ páginas",
+      beforeDescription: "Cada analista redacta documentos con formatos diferentes, calidad variable y sin alineación clara con la tesis",
+      afterTitle: "Generación automatizada de documentos profesionales",
+      afterDescription: "Obtén memos estructurados y personalizados con tu identidad corporativa, listos para presentar al comité",
       beforeIcon: "chain",
       afterIcon: "brain",
     },
     {
-      beforeTitle: "Tasa de conversión baja por falta de información",
-      beforeDescription: "Pierdes ventas porque no sabes cuándo ni cómo hacer seguimiento efectivo a cada oportunidad",
-      afterTitle: "Incremento del 35% en tasa de cierre",
-      afterDescription: "Mejora tus resultados sabiendo exactamente cuándo y qué decir en cada seguimiento basado en datos reales de interacción",
+      beforeTitle: "Dificultad para evaluar alineación con la tesis",
+      beforeDescription: "Pierdes oportunidades por análisis superficial o inviertes en startups que no encajan con tus criterios",
+      afterTitle: "Evaluación cuantitativa de compatibilidad",
+      afterDescription: "Sistema de scoring automático que evalúa cada startup según los criterios configurables de tu fondo",
       beforeIcon: "chart-down",
       afterIcon: "chart-up",
     }
   ];
 
   return (
-    <section id="pain-triggers" className="py-24 bg-gradient-to-b from-irrelevant-background to-irrelevant-background/90">
+    <section id="pain-triggers" className="py-24 bg-gradient-to-b from-gray-900 to-gray-900/90">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-6 text-3xl font-bold relative inline-block">
-            Del envío y olvido 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> al seguimiento inteligente</span>
+            Del análisis manual 
+            <span className="bg-gradient-to-r from-blue-500 to-indigo-400 text-transparent bg-clip-text"> a la inteligencia inversora</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-irrelevant-textSecondary">
-            Descubre cómo las cotizaciones traqueables transforman tus propuestas comerciales en herramientas de venta proactivas.
+          <p className="max-w-2xl mx-auto text-lg text-gray-400">
+            Descubre cómo InvestFlow transforma el proceso de due diligence en una ventaja competitiva para tu fondo de inversión.
           </p>
         </div>
         
@@ -106,8 +106,8 @@ const PainTriggersSection = () => {
                 onClick={() => setActiveIndex(index)}
                 className={`h-3 transition-all ${
                   activeIndex === index 
-                    ? 'bg-irrelevant-primary w-10 rounded-full' /* Más grande y visible */
-                    : 'bg-irrelevant-interactive w-3 rounded-full opacity-50 hover:opacity-75' /* Mejor estado hover */
+                    ? 'bg-blue-500 w-10 rounded-full' /* Más grande y visible */
+                    : 'bg-blue-800 w-3 rounded-full opacity-50 hover:opacity-75' /* Mejor estado hover */
                 }`}
                 aria-label={`Ir a la diapositiva ${index + 1}`}
               />

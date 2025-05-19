@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
-const EnhancedQuotesHeroSection = () => {
+const InvestFlowHeroSection = () => {
   const videoRef = useRef();
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -10,14 +10,14 @@ const EnhancedQuotesHeroSection = () => {
   
   // Datos para animación de números
   const [counters, setCounters] = useState({
-    closingRate: 0,
-    followUpEfficiency: 0,
-    timeReduction: 0
+    timeReduction: 0,
+    alignmentScore: 0,
+    efficiencyGain: 0
   });
   
   // Estados para animaciones de documentos
-  const [showQuote, setShowQuote] = useState(false);
-  const [showCheckmark, setShowCheckmark] = useState(false);
+  const [showDocument, setShowDocument] = useState(false);
+  const [showAnalysis, setShowAnalysis] = useState(false);
   
   // Efecto para seguimiento del mouse para efectos parallax
   useEffect(() => {
@@ -57,20 +57,20 @@ const EnhancedQuotesHeroSection = () => {
       await controls.start({ opacity: 1, scale: 1, transition: { duration: 0.5 } });
       setIsLoaded(true);
       
-      // Iniciar la secuencia de animación de cotizaciones después de cargar
+      // Iniciar la secuencia de animación de documentos después de cargar
       setTimeout(() => {
-        setShowQuote(true);
+        setShowDocument(true);
         setTimeout(() => {
-          setShowCheckmark(true);
+          setShowAnalysis(true);
         }, 1500);
       }, 1000);
       
       // Iniciar las animaciones de contador
       const counterInterval = setInterval(() => {
         setCounters(prev => ({
-          closingRate: Math.min(prev.closingRate + 1, 35),
-          followUpEfficiency: Math.min(prev.followUpEfficiency + 2, 90),
-          timeReduction: Math.min(prev.timeReduction + 3, 75)
+          timeReduction: Math.min(prev.timeReduction + 3, 80),
+          alignmentScore: Math.min(prev.alignmentScore + 2, 95),
+          efficiencyGain: Math.min(prev.efficiencyGain + 2, 70)
         }));
       }, 50);
       
@@ -144,17 +144,17 @@ const EnhancedQuotesHeroSection = () => {
           const size = Math.random() * 4 + 2;
           const depth = Math.random() * 5 + 1;
           const speed = 15 + Math.random() * 25;
-          const values = ["$", "%", "#", "👁️", "📊", "🔍", "+", "✓"];
+          const values = ["$", "%", "📊", "📝", "🔎", "📈", "✓", "AI"];
           const randValue = values[Math.floor(Math.random() * values.length)];
           
           return (
             <motion.div
               key={i}
-              className="absolute text-irrelevant-primary font-mono"
+              className="absolute text-blue-500 font-mono"
               style={{
                 fontSize: `${size * 2.5}px`,
                 fontWeight: "bold",
-                textShadow: `0 0 ${size}px rgba(96, 69, 255, 0.8)`,
+                textShadow: `0 0 ${size}px rgba(37, 99, 235, 0.8)`,
                 zIndex: Math.floor(depth),
                 x: `${Math.random() * 100}vw`,
                 y: `${Math.random() * 100}vh`,
@@ -198,7 +198,7 @@ const EnhancedQuotesHeroSection = () => {
       <div className="absolute inset-0 z-0 overflow-hidden opacity-20">
         <div className="absolute inset-0" 
           style={{
-            backgroundImage: 'linear-gradient(rgba(96, 69, 255, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 69, 255, 0.15) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(37, 99, 235, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.15) 1px, transparent 1px)',
             backgroundSize: '30px 30px',
             backgroundPosition: 'center center',
             transform: `perspective(1000px) rotateX(75deg) translateZ(-100px) translateY(150px) scale(2)`,
@@ -220,7 +220,7 @@ const EnhancedQuotesHeroSection = () => {
           return (
             <motion.div
               key={i}
-              className="absolute h-px bg-gradient-to-r from-transparent via-irrelevant-primary to-transparent"
+              className="absolute h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
               style={{
                 width: `${width}px`,
                 left: `${Math.random() * 100}%`,
@@ -245,8 +245,8 @@ const EnhancedQuotesHeroSection = () => {
     );
   };
   
-  // Componente para el efecto de cotizaciones flotantes
-  const FloatingQuotes = () => {
+  // Componente para el efecto de documentos flotantes
+  const FloatingDocuments = () => {
     return (
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(4)].map((_, i) => {
@@ -257,7 +257,7 @@ const EnhancedQuotesHeroSection = () => {
           return (
             <motion.div
               key={i}
-              className="absolute bg-white/5 backdrop-blur-sm rounded-md border border-irrelevant-primary/20 shadow-lg w-20 h-28"
+              className="absolute bg-white/5 backdrop-blur-sm rounded-md border border-blue-500/20 shadow-lg w-20 h-28"
               style={{
                 width: `${size}px`,
                 height: `${size * 1.4}px`,
@@ -279,18 +279,18 @@ const EnhancedQuotesHeroSection = () => {
                 ease: "easeInOut"
               }}
             >
-              {/* Líneas de cotización simuladas */}
+              {/* Líneas de documento simuladas */}
               <div className="h-full w-full p-2 flex flex-col justify-between overflow-hidden">
                 <div className="w-full flex justify-between items-center mb-1">
-                  <div className="w-1/2 h-2 bg-irrelevant-primary/20 rounded-full"></div>
-                  <div className="w-1/4 h-2 bg-irrelevant-primary/20 rounded-full"></div>
+                  <div className="w-1/2 h-2 bg-blue-500/20 rounded-full"></div>
+                  <div className="w-1/4 h-2 bg-blue-500/20 rounded-full"></div>
                 </div>
                 <div className="flex-grow flex flex-col space-y-1 justify-center">
                   {[...Array(4)].map((_, j) => (
                     <div key={j} className="w-full h-1 bg-white/10 rounded-full"></div>
                   ))}
                 </div>
-                <div className="w-2/3 h-2 bg-irrelevant-primary/30 rounded-full self-end"></div>
+                <div className="w-2/3 h-2 bg-blue-500/30 rounded-full self-end"></div>
               </div>
             </motion.div>
           );
@@ -299,7 +299,7 @@ const EnhancedQuotesHeroSection = () => {
     );
   };
 
-  // Efecto de análisis de cotizaciones
+  // Efecto de análisis de documentos
   const AnalyticsEffect = () => {
     return (
       <motion.div
@@ -309,7 +309,7 @@ const EnhancedQuotesHeroSection = () => {
         transition={{ duration: 1, delay: 1 }}
       >
         <motion.div
-          className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-irrelevant-primary to-transparent"
+          className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
           style={{ filter: 'blur(3px)' }}
           animate={{
             top: ['-10px', '120%'],
@@ -331,19 +331,19 @@ const EnhancedQuotesHeroSection = () => {
     return (
       <div className="absolute bottom-4 right-4 space-y-2 hidden lg:block">
         {[
-          { label: "Aumento tasa de cierre", value: counters.closingRate, suffix: "%" },
-          { label: "Eficiencia en seguimiento", value: counters.followUpEfficiency, suffix: "%" },
-          { label: "Reducción de tiempo", value: counters.timeReduction, suffix: "%" }
+          { label: "Reducción de tiempo", value: counters.timeReduction, suffix: "%" },
+          { label: "Alineación con tesis", value: counters.alignmentScore, suffix: "%" },
+          { label: "Ganancia en eficiencia", value: counters.efficiencyGain, suffix: "%" }
         ].map((stat, i) => (
           <motion.div 
             key={i}
-            className="bg-irrelevant-background/30 backdrop-blur-sm border border-irrelevant-primary/20 px-3 py-2 rounded-lg flex items-center justify-between w-56"
+            className="bg-gray-900/30 backdrop-blur-sm border border-blue-500/20 px-3 py-2 rounded-lg flex items-center justify-between w-56"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1 + i * 0.3, duration: 0.5 }}
           >
-            <span className="text-xs text-irrelevant-textSecondary">{stat.label}</span>
-            <span className="text-sm font-bold text-irrelevant-primary">
+            <span className="text-xs text-gray-300">{stat.label}</span>
+            <span className="text-sm font-bold text-blue-400">
               {stat.value}{stat.suffix}
             </span>
           </motion.div>
@@ -352,14 +352,14 @@ const EnhancedQuotesHeroSection = () => {
     );
   };
 
-  // Componente para la animación principal de cotización
-  const QuoteProcessAnimation = () => {
+  // Componente para la animación principal de documento a análisis
+  const DocumentProcessAnimation = () => {
     return (
       <div className="absolute top-1/2 transform -translate-y-1/2 right-8 hidden lg:block">
         <AnimatePresence>
-          {showQuote && (
+          {showDocument && (
             <motion.div
-              className="relative w-40 h-52 bg-white/10 backdrop-blur-md rounded-lg border border-irrelevant-primary/30 shadow-lg overflow-hidden"
+              className="relative w-40 h-52 bg-white/10 backdrop-blur-md rounded-lg border border-blue-500/30 shadow-lg overflow-hidden"
               initial={{ opacity: 0, x: 100, rotateY: 90 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
               exit={{ opacity: 0, x: -100 }}
@@ -369,11 +369,11 @@ const EnhancedQuotesHeroSection = () => {
                 damping: 20
               }}
             >
-              {/* Contenido de la cotización */}
+              {/* Contenido del documento */}
               <div className="p-3 flex flex-col h-full">
                 <div className="flex justify-between items-center mb-2">
-                  <div className="w-16 h-3 bg-irrelevant-primary/20 rounded-md"></div>
-                  <div className="w-8 h-3 bg-irrelevant-primary/20 rounded-md"></div>
+                  <div className="w-16 h-3 bg-blue-500/20 rounded-md"></div>
+                  <div className="w-8 h-3 bg-blue-500/20 rounded-md"></div>
                 </div>
                 
                 <div className="flex-grow space-y-2">
@@ -383,12 +383,12 @@ const EnhancedQuotesHeroSection = () => {
                   
                   <div className="flex justify-between items-center mt-4">
                     <div className="w-12 h-2 bg-white/20 rounded-full"></div>
-                    <div className="w-14 h-3 bg-irrelevant-primary/30 rounded-full"></div>
+                    <div className="w-14 h-3 bg-blue-500/30 rounded-full"></div>
                   </div>
                 </div>
                 
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-b from-transparent via-irrelevant-primary/10 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/10 to-transparent"
                   animate={{
                     y: ['-100%', '200%'],
                   }}
@@ -402,15 +402,15 @@ const EnhancedQuotesHeroSection = () => {
               </div>
               
               <AnimatePresence>
-                {showCheckmark && (
+                {showAnalysis && (
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center bg-irrelevant-background/60 backdrop-blur-md"
+                    className="absolute inset-0 flex items-center justify-center bg-gray-900/60 backdrop-blur-md"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div
-                      className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center"
+                      className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center"
                       initial={{ scale: 0 }}
                       animate={{ scale: [0, 1.2, 1] }}
                       transition={{ 
@@ -444,7 +444,7 @@ const EnhancedQuotesHeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background video with enhanced effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-irrelevant-background/90 backdrop-blur-md z-10"></div>
+        <div className="absolute inset-0 bg-gray-900/90 backdrop-blur-md z-10"></div>
         <DataGridEffect />
         <motion.div 
           className="relative h-full w-full"
@@ -470,7 +470,7 @@ const EnhancedQuotesHeroSection = () => {
       {/* Animated background gradients with depth effect */}
       <div className="absolute inset-0 z-1 overflow-hidden">
         <motion.div 
-          className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full opacity-10 blur-3xl"
+          className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full opacity-10 blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -486,7 +486,7 @@ const EnhancedQuotesHeroSection = () => {
           }}
         />
         <motion.div 
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full opacity-10 blur-3xl"
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600 rounded-full opacity-10 blur-3xl"
           animate={{
             x: [0, -50, 0],
             y: [0, -30, 0],
@@ -507,7 +507,7 @@ const EnhancedQuotesHeroSection = () => {
       <AnalyticsEffect />
       <DataParticles />
       <DataFlowEffect />
-      <FloatingQuotes />
+      <FloatingDocuments />
       
       {/* Content */}
       <div className="relative z-20 px-4 sm:px-6 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -531,23 +531,23 @@ const EnhancedQuotesHeroSection = () => {
               animate={{ 
                 x: [0, 1, -1, 0], 
                 textShadow: [
-                  "0 0 0 rgba(96, 69, 255, 0)",
-                  "0 0 10px rgba(96, 69, 255, 0.5)",
-                  "0 0 0 rgba(96, 69, 255, 0)"
+                  "0 0 0 rgba(37, 99, 235, 0)",
+                  "0 0 10px rgba(37, 99, 235, 0.5)",
+                  "0 0 0 rgba(37, 99, 235, 0)"
                 ]
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
-              TUS COTIZACIONES AHORA
+              TUS INVERSIONES AHORA
             </motion.span>
             <motion.span 
-              className="block bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text relative"
+              className="block bg-gradient-to-r from-blue-500 to-indigo-400 text-transparent bg-clip-text relative"
               animate={{ 
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                 textShadow: [
-                  "0 0 20px rgba(96, 69, 255, 0.3)",
-                  "0 0 30px rgba(96, 69, 255, 0.5)",
-                  "0 0 20px rgba(96, 69, 255, 0.3)"
+                  "0 0 20px rgba(37, 99, 235, 0.3)",
+                  "0 0 30px rgba(37, 99, 235, 0.5)",
+                  "0 0 20px rgba(37, 99, 235, 0.3)"
                 ]
               }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -560,32 +560,32 @@ const EnhancedQuotesHeroSection = () => {
             className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white mb-6 sm:mb-8"
             variants={itemVariants}
           >
-            Convierte leads calientes en ventas reales con cotizaciones que se rastrean automáticamente. 
+            Transforma tu proceso de due diligence con análisis automatizado y memos de inversión alineados con tu tesis. 
             <motion.span 
-              className="font-bold text-irrelevant-primary inline-block ml-1"
+              className="font-bold text-blue-400 inline-block ml-1"
               animate={{ 
-                color: ['rgb(96, 69, 255)', 'rgb(136, 109, 255)', 'rgb(96, 69, 255)'],
+                color: ['rgb(96, 165, 250)', 'rgb(129, 140, 248)', 'rgb(96, 165, 250)'],
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              Sabe exactamente cuándo actuar con cada cliente.
+              De 20 horas a 4 horas por startup.
             </motion.span>
           </motion.p>
           
           <motion.a 
-            href="https://wa.me/573183351733?text=Quiero%20implementar%20Cotizaciones%20Inteligentes%20con%20Irrelevant"
+            href="https://wa.me/573183351733?text=Quiero%20implementar%20InvestFlow%20en%20mi%20fondo"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform shadow-lg shadow-irrelevant-primary/30 text-sm md:text-base w-full sm:w-auto self-center sm:self-start overflow-hidden relative"
+            className="group bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform shadow-lg shadow-blue-500/30 text-sm md:text-base w-full sm:w-auto self-center sm:self-start overflow-hidden relative"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05, 
-              boxShadow: "0px 5px 20px rgba(96, 69, 255, 0.5)",
+              boxShadow: "0px 5px 20px rgba(37, 99, 235, 0.5)",
             }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="inline-flex items-center justify-center font-bold relative z-10">
-              QUIERO COTIZACIONES INTELIGENTES
+              QUIERO INVESTFLOW PARA MI FONDO
               <motion.div 
                 className="ml-2 w-5 h-5"
                 animate={{ x: [0, 5, 0] }}
@@ -597,7 +597,7 @@ const EnhancedQuotesHeroSection = () => {
               </motion.div>
             </span>
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-purple-500 to-irrelevant-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -612,44 +612,44 @@ const EnhancedQuotesHeroSection = () => {
             {[
               {
                 icon: (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Seguimiento automático"
+                text: "80% menos tiempo"
               },
               {
                 icon: (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 4V6M12 8V12M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Analytics en tiempo real"
+                text: "Evaluación automática"
               },
               {
                 icon: (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Aumenta tasa de cierre"
+                text: "Alineación con tesis"
               },
               {
                 icon: (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-irrelevant-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Integrable con CRMs"
+                text: "IA contextual"
               }
             ].map((feature, i) => (
               <motion.div
                 key={i}
-                className="flex items-center bg-irrelevant-background/70 backdrop-blur-sm border border-irrelevant-border py-2 px-3 sm:px-4 rounded-lg group hover:bg-irrelevant-background/90 transition-all duration-300 w-full sm:w-auto"
+                className="flex items-center bg-gray-900/70 backdrop-blur-sm border border-gray-700 py-2 px-3 sm:px-4 rounded-lg group hover:bg-gray-800/90 transition-all duration-300 w-full sm:w-auto"
                 whileHover={{ 
                   scale: 1.03, 
-                  boxShadow: "0px 2px 15px rgba(96, 69, 255, 0.15)",
-                  borderColor: "rgba(96, 69, 255, 0.5)"
+                  boxShadow: "0px 2px 15px rgba(37, 99, 235, 0.15)",
+                  borderColor: "rgba(37, 99, 235, 0.5)"
                 }}
                 initial="rest"
                 whileHover="hover"
@@ -664,7 +664,7 @@ const EnhancedQuotesHeroSection = () => {
                 </motion.div>
                 <span className="text-xs font-medium">{feature.text}</span>
                 <motion.div
-                  className="absolute inset-0 rounded-lg border border-irrelevant-primary/0 group-hover:border-irrelevant-primary/30"
+                  className="absolute inset-0 rounded-lg border border-blue-500/0 group-hover:border-blue-500/30"
                   variants={{
                     rest: { opacity: 0 },
                     hover: { 
@@ -678,7 +678,7 @@ const EnhancedQuotesHeroSection = () => {
           </motion.div>
         </motion.div>
         
-        {/* Right column: Enhanced 3D Quote Analytics Robot */}
+        {/* Right column: Enhanced 3D Investment Analytics Dashboard */}
         <motion.div 
           className="relative hidden lg:flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -704,10 +704,10 @@ const EnhancedQuotesHeroSection = () => {
                 return (
                   <motion.div
                     key={i}
-                    className="absolute top-1/2 left-1/2 w-2 h-2 bg-irrelevant-primary rounded-full"
+                    className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-500 rounded-full"
                     style={{
                       filter: "blur(1px)",
-                      boxShadow: "0 0 8px 2px rgba(96, 69, 255, 0.7)",
+                      boxShadow: "0 0 8px 2px rgba(37, 99, 235, 0.7)",
                       x: startX,
                       y: startY,
                       translateX: "-50%",
@@ -730,7 +730,7 @@ const EnhancedQuotesHeroSection = () => {
               })}
             </div>
             
-            {/* Floating quotes and analytics cards */}
+            {/* Floating documents and analytics cards */}
             <div className="absolute inset-0 pointer-events-none">
               {[
                 { top: "-20%", right: "10%", rotation: -15, delay: 0 },
@@ -740,7 +740,7 @@ const EnhancedQuotesHeroSection = () => {
               ].map((pos, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-12 h-16 bg-white/10 backdrop-blur-sm rounded-sm border border-irrelevant-primary/20 p-1.5"
+                  className="absolute w-12 h-16 bg-white/10 backdrop-blur-sm rounded-sm border border-blue-500/20 p-1.5"
                   style={{
                     ...pos,
                     transform: `rotate(${pos.rotation}deg)`,
@@ -751,7 +751,7 @@ const EnhancedQuotesHeroSection = () => {
                     rotate: [pos.rotation, pos.rotation + 3, pos.rotation],
                     boxShadow: [
                       "0 5px 15px rgba(0, 0, 0, 0.2)",
-                      "0 8px 20px rgba(96, 69, 255, 0.3)",
+                      "0 8px 20px rgba(37, 99, 235, 0.3)",
                       "0 5px 15px rgba(0, 0, 0, 0.2)"
                     ]
                   }}
@@ -762,19 +762,19 @@ const EnhancedQuotesHeroSection = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  {/* Líneas de cotización simuladas */}
+                  {/* Líneas de documento simuladas */}
                   <div className="w-2/3 h-1 bg-white/30 rounded-full mb-1"></div>
                   <div className="w-full h-1 bg-white/20 rounded-full mb-1"></div>
                   <div className="w-1/2 h-1 bg-white/20 rounded-full mb-1"></div>
                   <div className="w-3/4 h-1 bg-white/20 rounded-full mb-1"></div>
-                  <div className="mt-3 w-2/3 h-1.5 bg-irrelevant-primary/40 rounded-full"></div>
+                  <div className="mt-3 w-2/3 h-1.5 bg-blue-500/40 rounded-full"></div>
                 </motion.div>
               ))}
             </div>
             
             {/* Glow effect behind dashboard */}
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 rounded-full blur-2xl"
+              className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 rounded-full blur-2xl"
               {...pulseAnimation}
               style={{
                 filter: "blur(30px)",
@@ -796,11 +796,11 @@ const EnhancedQuotesHeroSection = () => {
                 {...floatingAnimation}
               >
                 <img 
-                  src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png" 
-                  alt="Dashboard de Cotizaciones Irrelevant" 
+                  src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/vc_irrelevant.png" 
+                  alt="Dashboard de InvestFlow" 
                   className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl"
                   style={{
-                    filter: "drop-shadow(0 0 20px rgba(96, 69, 255, 0.3))"
+                    filter: "drop-shadow(0 0 20px rgba(37, 99, 235, 0.3))"
                   }}
                 />
               </motion.div>
@@ -824,7 +824,7 @@ const EnhancedQuotesHeroSection = () => {
                     }}
                   >
                     <img 
-                      src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png"
+                      src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/investflow-dashboard.png"
                       alt=""
                       className="w-full h-auto max-h-[500px] object-contain"
                       style={{ 
@@ -844,7 +844,7 @@ const EnhancedQuotesHeroSection = () => {
                 transition={{ delay: 1.8, duration: 0.5, type: "spring" }}
                 whileHover={{ 
                   scale: 1.1, 
-                  boxShadow: "0 0 30px rgba(96, 69, 255, 0.5)"
+                  boxShadow: "0 0 30px rgba(37, 99, 235, 0.5)"
                 }}
               >
                 <motion.div
@@ -858,7 +858,7 @@ const EnhancedQuotesHeroSection = () => {
                     duration: 10
                   }}
                   style={{
-                    background: "radial-gradient(circle at center, rgba(96, 69, 255, 0.3) 0%, transparent 70%)",
+                    background: "radial-gradient(circle at center, rgba(37, 99, 235, 0.3) 0%, transparent 70%)",
                   }}
                 />
                 <svg className="w-8 h-8 text-white relative z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -867,13 +867,13 @@ const EnhancedQuotesHeroSection = () => {
               </motion.div>
               
               <motion.div 
-                className="absolute -top-8 right-0 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center overflow-hidden backdrop-blur-sm"
+                className="absolute -top-8 right-0 w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center overflow-hidden backdrop-blur-sm"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 2, duration: 0.5, type: "spring" }}
                 whileHover={{ 
                   scale: 1.1, 
-                  boxShadow: "0 0 30px rgba(149, 76, 233, 0.5)"
+                  boxShadow: "0 0 30px rgba(79, 70, 229, 0.5)"
                 }}
               >
                 <motion.div
@@ -887,7 +887,7 @@ const EnhancedQuotesHeroSection = () => {
                     duration: 15
                   }}
                   style={{
-                    background: "radial-gradient(circle at center, rgba(149, 76, 233, 0.3) 0%, transparent 70%)",
+                    background: "radial-gradient(circle at center, rgba(79, 70, 229, 0.3) 0%, transparent 70%)",
                   }}
                 />
                 <svg className="w-7 h-7 text-white relative z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -895,9 +895,9 @@ const EnhancedQuotesHeroSection = () => {
                 </svg>
               </motion.div>
               
-              {/* Tracking feature badge */}
+              {/* AI feature badge */}
               <motion.div
-                className="absolute -bottom-4 right-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg"
+                className="absolute -bottom-4 right-4 bg-gradient-to-r from-blue-400 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 2.3, duration: 0.5, type: "spring" }}
@@ -905,12 +905,12 @@ const EnhancedQuotesHeroSection = () => {
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none">
                   <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span>Tracking en vivo</span>
+                <span>Análisis IA</span>
               </motion.div>
               
-              {/* Visitor tracking popup */}
+              {/* Document processing popup */}
               <motion.div
-                className="absolute -top-10 left-4 bg-irrelevant-background/80 backdrop-blur-md p-2 rounded-lg border border-irrelevant-primary/20 shadow-lg w-32"
+                className="absolute -top-10 left-4 bg-gray-900/80 backdrop-blur-md p-2 rounded-lg border border-blue-500/20 shadow-lg w-48"
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ 
                   opacity: [0, 1, 1, 0],
@@ -935,11 +935,11 @@ const EnhancedQuotesHeroSection = () => {
                       repeatDelay: 1
                     }}
                   >
-                    Carlos R. vio tu propuesta
+                    Alineación con tesis de inversión: 92%
                   </motion.span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="text-[10px] text-irrelevant-primary">hace 2 min</div>
+                  <div className="text-[10px] text-blue-400">Pitch Deck analizado</div>
                   <div className="flex items-center">
                     <motion.div 
                       className="w-2 h-2 bg-green-500 rounded-full mr-1"
@@ -952,7 +952,7 @@ const EnhancedQuotesHeroSection = () => {
                         repeat: Infinity,
                       }}
                     />
-                    <span className="text-[10px] text-green-400">en línea</span>
+                    <span className="text-[10px] text-green-400">completado</span>
                   </div>
                 </div>
               </motion.div>
@@ -962,7 +962,7 @@ const EnhancedQuotesHeroSection = () => {
             <motion.div 
               className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-56 h-10 opacity-60 blur-xl rounded-full"
               style={{
-                background: "radial-gradient(ellipse, rgba(96, 69, 255, 0.8) 0%, rgba(96, 69, 255, 0) 70%)"
+                background: "radial-gradient(ellipse, rgba(37, 99, 235, 0.8) 0%, rgba(37, 99, 235, 0) 70%)"
               }}
               animate={{
                 width: ['14rem', '16rem', '14rem'],
@@ -988,23 +988,23 @@ const EnhancedQuotesHeroSection = () => {
         {[...Array(8)].map((_, i) => {
           const size = Math.random() * 10 + 8;
           const speed = 20 + Math.random() * 40;
-          // Datos relevantes para cotizaciones y analytics
+          // Datos relevantes para análisis de inversiones
           const metrics = [
-            "+35% conversión",
-            "3 vistas hoy",
-            "2min tiempo lectura",
-            "90% interés",
-            "7 días de ciclo",
-            "5 aperturas",
-            "2 compartidos",
-            "Reunión agendada"
+            "TAM: $5.2B",
+            "CAC: $450",
+            "EBITDA: 32%",
+            "IRR: 18.5%",
+            "ARR: $1.2M",
+            "MRR: $125K",
+            "Cohort retention: 85%",
+            "Alignment score: 92%"
           ];
           const metric = metrics[Math.floor(Math.random() * metrics.length)];
           
           return (
             <motion.div
               key={i}
-              className="absolute text-irrelevant-primary/20 font-mono text-sm font-bold"
+              className="absolute text-blue-500/20 font-mono text-sm font-bold"
               style={{
                 left: `${Math.random() * 90 + 5}%`,
                 top: "-20px",
@@ -1065,8 +1065,8 @@ const EnhancedQuotesHeroSection = () => {
           />
           <defs>
             <linearGradient id="paint0_linear_hero_wave" x1="720" y1="0" x2="720" y2="74" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#6045FF" />
-              <stop offset="1" stopColor="#6045FF" stopOpacity="0" />
+              <stop stopColor="#2563EB" />
+              <stop offset="1" stopColor="#2563EB" stopOpacity="0" />
             </linearGradient>
           </defs>
         </motion.svg>
@@ -1080,20 +1080,20 @@ const EnhancedQuotesHeroSection = () => {
         transition={{ delay: 2.5, duration: 0.5 }}
       >
         <motion.span 
-          className="text-irrelevant-textSecondary text-xs mb-2 sm:mb-3 font-medium"
+          className="text-gray-400 text-xs mb-2 sm:mb-3 font-medium"
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
           Descubre más
         </motion.span>
         <motion.div 
-          className="w-8 h-8 rounded-full flex items-center justify-center border border-irrelevant-primary/30 bg-irrelevant-primary/10 backdrop-blur-sm"
+          className="w-8 h-8 rounded-full flex items-center justify-center border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm"
           animate={{ 
             y: [0, 5, 0],
             boxShadow: [
-              "0 0 0 rgba(96, 69, 255, 0)",
-              "0 0 10px rgba(96, 69, 255, 0.5)",
-              "0 0 0 rgba(96, 69, 255, 0)"
+              "0 0 0 rgba(37, 99, 235, 0)",
+              "0 0 10px rgba(37, 99, 235, 0.5)",
+              "0 0 0 rgba(37, 99, 235, 0)"
             ]
           }}
           transition={{ duration: 1.5, repeat: Infinity }}
@@ -1101,7 +1101,7 @@ const EnhancedQuotesHeroSection = () => {
         >
           <motion.svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="h-4 w-4 text-irrelevant-primary" 
+            className="h-4 w-4 text-blue-500" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -1127,4 +1127,4 @@ const EnhancedQuotesHeroSection = () => {
   );
 };
 
-export default EnhancedQuotesHeroSection;
+export default InvestFlowHeroSection;
