@@ -32,31 +32,31 @@ const AIAgentSection = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-irrelevant-primary to-purple-600 opacity-20 rounded-full blur-xl transform scale-90"></div>
             <img 
-              src="https://storage.googleapis.com/cluvi/irrelevant-accountant.png" 
-              alt="Mr. Irrelevant - Tu Asistente Contable"
+              src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png" 
+              alt="QuoteBot - Tu Asistente de Ventas"
               className="relative z-10 mx-auto max-w-full"
               style={{ maxHeight: '500px' }}
             />
             
             {/* Name badge */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-irrelevant-primary text-white px-4 py-2 rounded-lg font-bold shadow-lg">
-              MR. IRRELEVANT
+              MR.IRRELEVANT
             </div>
           </div>
           
           {/* Chat bubbles */}
           <div className={`absolute top-14 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.3s' }}>
-            <p className="text-sm font-medium">¡Hola! Soy Mr. Irrelevant, tu contador virtual en Siigo disponible 24/7 👋</p>
+            <p className="text-sm font-medium">¡Hola! Soy Mr.Irrelevant, tu asistente de ventas inteligente que monitorea tus cotizaciones 24/7 👋</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
           
           <div className={`absolute top-1/3 -right-4 bg-irrelevant-primary text-white p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.6s' }}>
-            <p className="text-sm font-medium">Puedo facturar y causar directamente en Siigo sin importar la hora o el día ⚡</p>
+            <p className="text-sm font-medium">Te aviso al instante cuando un cliente muestra interés en tu propuesta, para que nunca pierdas una oportunidad ⚡</p>
             <div className="absolute right-4 -bottom-2 w-4 h-4 bg-irrelevant-primary transform rotate-45"></div>
           </div>
           
           <div className={`absolute bottom-20 -left-4 bg-white text-black p-3 rounded-lg shadow-lg transform ${isInView ? 'animate-slide-in' : 'opacity-0'}`} style={{ maxWidth: '220px', animationDelay: '0.9s' }}>
-            <p className="text-sm font-medium">Nunca tomo vacaciones, trabajo fines de semana y estoy en tu bolsillo a través de WhatsApp 📱</p>
+            <p className="text-sm font-medium">Hago seguimiento automático a través de WhatsApp y email cuando detectamos que un cliente está interesado en tu cotización 📱</p>
             <div className="absolute left-4 -bottom-2 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
         </div>
@@ -66,14 +66,12 @@ const AIAgentSection = () => {
           
           <h2 className="mb-6">
             CONOCE A 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> MR. IRRELEVANT</span>
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> MR.IRRELEVANT</span>
           </h2>
           
           <p className="mb-6 text-lg">
-            Tu asistente contable virtual que trabaja directamente en Siigo las 24 horas, todos los días. Nunca pide vacaciones, trabaja fines de semana y está siempre disponible desde tu celular para mantener tu contabilidad al día.
+            Tu asistente de ventas virtual que monitorea tus cotizaciones las 24 horas, todos los días. Nunca pierde una oportunidad, realiza seguimiento automático y te mantiene informado sobre el comportamiento de tus clientes potenciales.
           </p>
-          
-          
           
           <div className="space-y-6 mb-10">
             <div className="flex items-start">
@@ -83,9 +81,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Sin limitaciones de horario</h4>
+                <h4 className="text-lg font-bold mb-1">Alertas en tiempo real</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Factura a cualquier hora, incluso durante fines de semana y noches. Cierra negocios sin retrasos.
+                  Recibe notificaciones inmediatas cuando un cliente abre tu cotización, con datos de cuántas veces y por cuánto tiempo la revisó.
                 </p>
               </div>
             </div>
@@ -97,9 +95,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Perfección contable</h4>
+                <h4 className="text-lg font-bold mb-1">Seguimiento automático</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Causación precisa sin errores humanos. Mantén tu información contable al día con la DIAN.
+                  Envía mensajes personalizados por WhatsApp o email en el momento perfecto, basándose en la interacción del cliente con tu propuesta.
                 </p>
               </div>
             </div>
@@ -111,9 +109,9 @@ const AIAgentSection = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-lg font-bold mb-1">Simplicidad por WhatsApp</h4>
+                <h4 className="text-lg font-bold mb-1">Priorización inteligente</h4>
                 <p className="text-irrelevant-textSecondary">
-                  Accede desde tu celular con un simple mensaje. Es como tener un contador en tu bolsillo.
+                  Identifica automáticamente cuáles leads están más interesados, permitiéndote enfocar tus esfuerzos en los clientes con mayor potencial.
                 </p>
               </div>
             </div>
@@ -126,18 +124,18 @@ const AIAgentSection = () => {
               </svg>
             </div>
             <div>
-              <h4 className="font-bold mb-1">Integración perfecta con Siigo</h4>
-              <p className="text-sm">Todas las operaciones se registran directamente en tu sistema Siigo sin pasos intermedios</p>
+              <h4 className="font-bold mb-1">Integración con tu CRM</h4>
+              <p className="text-sm">Toda la información se sincroniza directamente con tu sistema de gestión de clientes, manteniendo todo centralizado</p>
             </div>
           </div>
           
           <a 
-            href="https://wa.me/1234567890?text=Quiero%20a%20Mr.%20Irrelevant%20como%20mi%20contador%20virtual"
+            href="https://wa.me/573183351733?text=Quiero%20a%20QuoteBot%20para%20monitorear%20mis%20cotizaciones"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 inline-flex items-center"
           >
-            QUIERO A MR. IRRELEVANT EN MI EMPRESA
+            QUIERO A MR.IRRELEVANT EN MI EQUIPO DE VENTAS
           </a>
         </div>
       </div>

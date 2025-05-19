@@ -49,7 +49,7 @@ const CTASection = () => {
               </div>
               
               <a 
-                href="https://wa.me/1234567890?text=Quiero%20incorporar%20Irrelevant%20a%20mi%20equipo"
+                href="https://wa.me/573183351733?text=Quiero%20incorporar%20Irrelevant%20a%20mi%20equipo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-5 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30 flex-shrink-0 text-center md:text-left w-full md:w-auto"

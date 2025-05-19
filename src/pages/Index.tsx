@@ -10,6 +10,7 @@ import EcosystemSection from "@/components/EcosystemSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import WorkflowSection from "@/components/WorkflowSection";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -36,6 +37,7 @@ const Index = () => {
     <div className="min-h-screen bg-irrelevant-background text-white">
       <Header />
       <HeroSection />
+      <WorkflowSection />
       <PainTriggersSection />
       {/* <SolutionArchitecture /> */}
       <UseCasesSection />

@@ -15,34 +15,34 @@ const PainTriggersSection = () => {
 
   const painTriggers = [
     {
-      beforeTitle: "42 horas/semana en digitación manual",
-      beforeDescription: "Tu equipo contable invierte casi la mitad de su tiempo en tareas repetitivas de entrada de datos",
-      afterTitle: "Solo 2 horas/semana de supervisión",
-      afterDescription: "Reducción del 95% del tiempo operativo, liberando a tu equipo para tareas de mayor valor estratégico",
+      beforeTitle: "Propuestas enviadas que nunca reciben respuesta",
+      beforeDescription: "Mandas PDF de cotizaciones y nunca más sabes del cliente, perdiendo oportunidades sin entender por qué",
+      afterTitle: "Seguimiento en tiempo real de cada interacción",
+      afterDescription: "Sabes exactamente cuándo, quién y por cuánto tiempo vio tu propuesta, permitiéndote actuar en el momento perfecto",
       beforeIcon: "time",
       afterIcon: "rocket",
     },
     {
-      beforeTitle: "34% de errores por digitación manual",
-      beforeDescription: "Los errores humanos generan reprocesos, inconsistencias contables y problemas de conciliación",
-      afterTitle: "Precisión del 99.7% automatizada",
-      afterDescription: "Elimina virtualmente todos los errores de digitación y garantiza consistencia en tus registros contables",
+      beforeTitle: "65% de cotizaciones olvidadas sin seguimiento",
+      beforeDescription: "Tu equipo comercial olvida hacer seguimiento en el momento oportuno, dejando que leads calientes se enfríen",
+      afterTitle: "Alertas automáticas de interés del cliente",
+      afterDescription: "Recibe notificaciones cuando un cliente muestra interés, permitiendo a tu equipo priorizar leads realmente calientes",
       beforeIcon: "error",
       afterIcon: "check",
     },
     {
-      beforeTitle: "Dependencia del personal para tareas básicas",
-      beforeDescription: "Tu crecimiento está limitado por la capacidad de tu equipo para procesar documentos manualmente",
-      afterTitle: "Liberación del talento para análisis",
-      afterDescription: "Tu equipo puede enfocarse en interpretar datos y tomar decisiones estratégicas, no en procesarlos",
+      beforeTitle: "No sabes si tus clientes ven tus propuestas",
+      beforeDescription: "Envías cotizaciones en PDF sin forma de saber si fueron abiertas, compartidas o revisadas en detalle",
+      afterTitle: "Analytics completo de cada interacción",
+      afterDescription: "Visualiza exactamente qué secciones interesan más a tus clientes y cuánto tiempo dedicaron a cada detalle de tu propuesta",
       beforeIcon: "chain",
       afterIcon: "brain",
     },
     {
-      beforeTitle: "Crecimiento limitado por capacidad operativa",
-      beforeDescription: "Para vender más necesitas contratar más personal, reduciendo tus márgenes de ganancia",
-      afterTitle: "Escala ventas sin aumentar costos",
-      afterDescription: "Procesa 10x más facturas con el mismo equipo, manteniendo tus costos operativos bajo control",
+      beforeTitle: "Tasa de conversión baja por falta de información",
+      beforeDescription: "Pierdes ventas porque no sabes cuándo ni cómo hacer seguimiento efectivo a cada oportunidad",
+      afterTitle: "Incremento del 35% en tasa de cierre",
+      afterDescription: "Mejora tus resultados sabiendo exactamente cuándo y qué decir en cada seguimiento basado en datos reales de interacción",
       beforeIcon: "chart-down",
       afterIcon: "chart-up",
     }
@@ -53,11 +53,11 @@ const PainTriggersSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-6 text-3xl font-bold relative inline-block">
-            De la frustración 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> a la eficiencia</span>
+            Del envío y olvido 
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> al seguimiento inteligente</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-irrelevant-textSecondary">
-            Descubre cómo la automatización inteligente elimina los cuellos de botella más costosos en tus procesos contables.
+            Descubre cómo las cotizaciones traqueables transforman tus propuestas comerciales en herramientas de venta proactivas.
           </p>
         </div>
         

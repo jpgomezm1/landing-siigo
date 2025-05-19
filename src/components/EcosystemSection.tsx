@@ -6,14 +6,14 @@ const EcosystemSection = () => {
   
   const modules = [
     {
-      id: "invoicing",
-      title: "Facturación y Causación Automatizada",
+      id: "quotes",
+      title: "Cotizaciones Inteligentes y Traqueables",
       tagline: "El núcleo de nuestro ecosistema",
-      description: "Automatización completa de procesos contables con tecnología de vanguardia.",
+      description: "Cotizaciones web personalizadas con seguimiento en tiempo real y analytics avanzado.",
       benefits: [
-        "Reduce tiempos operativos en un 95%",
-        "Elimina errores por digitación manual",
-        "Compatible 100% con Siigo",
+        "Seguimiento de aperturas y tiempo de lectura",
+        "Notificaciones en tiempo real de interacciones",
+        "Personalización completa para cada cliente",
         "Implementación en solo 3-5 días"
       ],
       icon: (
@@ -29,14 +29,14 @@ const EcosystemSection = () => {
     },
     {
       id: "whatsapp",
-      title: "Automatización de pedidos por WhatsApp",
-      tagline: "Toma pedidos automáticamente",
-      description: "Convierte WhatsApp en un canal de ventas automatizado que se integra con tus sistemas.",
+      title: "Seguimiento Automático por WhatsApp",
+      tagline: "Automatiza el seguimiento comercial",
+      description: "Sistema de seguimiento automático por WhatsApp basado en la interacción del cliente con tus cotizaciones.",
       benefits: [
-        "Recepción automática de pedidos 24/7",
-        "Catálogo digital interactivo",
-        "Confirmaciones automáticas para clientes",
-        "Sincronización con tu inventario"
+        "Mensajes personalizados automáticos",
+        "Secuencias de seguimiento inteligentes",
+        "Respuestas programadas según el interés",
+        "Integración con tu catálogo de productos"
       ],
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,14 +48,14 @@ const EcosystemSection = () => {
     },
     {
       id: "sales",
-      title: "Control de ventas y metas comerciales",
-      tagline: "Potencia a tu equipo comercial",
-      description: "Visualización avanzada del rendimiento comercial con objetivos e incentivos automáticos.",
+      title: "Dashboard de Rendimiento Comercial",
+      tagline: "Potencia a tu equipo de ventas",
+      description: "Analytics completo del rendimiento de tus propuestas y vendedores con métricas de cierre y seguimiento.",
       benefits: [
-        "Dashboard en tiempo real del equipo",
-        "Seguimiento automático de metas",
-        "Proyecciones basadas en IA",
-        "Comisiones calculadas automáticamente"
+        "Métricas de efectividad por vendedor",
+        "Análisis de tasas de conversión",
+        "Identificación de mejores prácticas",
+        "Cálculo automático de comisiones"
       ],
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,14 +72,14 @@ const EcosystemSection = () => {
     },
     {
       id: "alerts",
-      title: "Sistema de alertas predictivas",
-      tagline: "Anticípate a los problemas",
-      description: "Detecta y previene problemas antes de que ocurran con alertas basadas en IA.",
+      title: "Sistema de Alertas Predictivas",
+      tagline: "Anticípate a las oportunidades",
+      description: "Alertas inteligentes que predicen cuándo un cliente está listo para cerrar o cuándo necesita atención urgente.",
       benefits: [
-        "Alerta sobre patrones inusuales",
-        "Detecta posibles errores contables",
-        "Identifica riesgos de flujo de caja",
-        "Anticipación de necesidades de inventario"
+        "Detección de leads calientes",
+        "Alertas de propuestas olvidadas",
+        "Notificación de patrones de interés",
+        "Recordatorios inteligentes de seguimiento"
       ],
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,15 +92,15 @@ const EcosystemSection = () => {
       color: "from-amber-500 to-amber-600"
     },
     {
-      id: "suppliers",
-      title: "Gestión de proveedores",
-      tagline: "Optimiza tu cadena de suministro",
-      description: "Centraliza y automatiza todas las interacciones con proveedores en un solo lugar.",
+      id: "templates",
+      title: "Biblioteca de Plantillas",
+      tagline: "Optimiza tu proceso de cotización",
+      description: "Biblioteca de plantillas de cotizaciones pre-diseñadas para diferentes industrias y casos de uso.",
       benefits: [
-        "Centralización de información de proveedores",
-        "Automatización de órdenes de compra",
-        "Seguimiento de pagos y vencimientos",
-        "Evaluación automática de proveedores"
+        "Templates optimizados según tu industria",
+        "Elementos visuales de alto impacto",
+        "Diferentes estructuras según el cliente",
+        "Personalización de marca completa"
       ],
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,15 +115,15 @@ const EcosystemSection = () => {
       color: "from-indigo-500 to-indigo-600"
     },
     {
-      id: "reports",
-      title: "Reportería potenciada por IA",
-      tagline: "Insights accionables automáticos",
-      description: "Informes avanzados que no solo muestran datos, sino que te dicen qué hacer con ellos.",
+      id: "crm",
+      title: "Integración con CRM y ERP",
+      tagline: "Conecta todo tu ecosistema comercial",
+      description: "Conecta tus cotizaciones inteligentes con los sistemas que ya utilizas para mantener todo sincronizado.",
       benefits: [
-        "Informes automáticos periódicos",
-        "Visualizaciones claras y accionables",
-        "Detección de tendencias ocultas",
-        "Recomendaciones personalizadas"
+        "Integración con HubSpot, Salesforce y más",
+        "Sincronización bidireccional de datos",
+        "Actualización automática de estado en CRM",
+        "Importación de contactos y productos"
       ],
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,11 +157,11 @@ const EcosystemSection = () => {
         <div className="text-center mb-16">
 
           <h2 className="mb-6">
-            Transforma completamente la operación de 
-            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> tu empresa </span>
+            Transforma completamente tu 
+            <span className="bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text"> proceso de ventas </span>
           </h2>
           <p className="max-w-2xl mx-auto text-irrelevant-textSecondary">
-            Irrelevant no es solo una solución, es un ecosistema completo e integrado que automatiza todos los aspectos clave de tu negocio.
+            Irrelevant Quotes no es solo una herramienta, es un ecosistema completo e integrado que potencia cada paso del proceso comercial.
           </p>
         </div>
         
@@ -248,60 +248,60 @@ const EcosystemSection = () => {
               
               {activeModule === 0 ? (
                 <div className="mt-6 bg-irrelevant-background/30 rounded-lg p-6 border border-irrelevant-border/50">
-                  <div className="flex items-center mb-4">
-                    <svg className="w-6 h-6 text-irrelevant-primary mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <h4 className="font-bold">Esta solución es un game changer para tu empresa</h4>
-                  </div>
-                  <p className="text-irrelevant-textSecondary mb-4">
-                    La automatización de facturación y causación es la puerta de entrada al ecosistema completo de Irrelevant - un sistema integral que elimina los trabajos manuales y repetitivos de toda tu operación.
-                  </p>
-                  <div className="flex justify-end">
-                    <div className="bg-irrelevant-primary/10 text-irrelevant-primary rounded-full px-3 py-1 text-xs">
-                      Solución destacada
-                    </div>
+                <div className="flex items-center mb-4">
+                  <svg className="w-6 h-6 text-irrelevant-primary mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <h4 className="font-bold">Esta solución es un game changer para tu proceso comercial</h4>
+                </div>
+                <p className="text-irrelevant-textSecondary mb-4">
+                  Las cotizaciones inteligentes y traqueables son la puerta de entrada al ecosistema completo de Irrelevant - un sistema integral que transforma cada etapa de tu proceso de ventas, desde la propuesta hasta el cierre.
+                </p>
+                <div className="flex justify-end">
+                  <div className="bg-irrelevant-primary/10 text-irrelevant-primary rounded-full px-3 py-1 text-xs">
+                    Solución destacada
                   </div>
                 </div>
-              ) : (
-                <div className="flex items-center justify-between mt-6 bg-irrelevant-background/30 rounded-lg p-4 border border-irrelevant-border/50">
-                  <span className="text-irrelevant-textSecondary text-sm">
-                    Descubre cómo esta solución se integra con el resto del ecosistema
-                  </span>
-                  <a 
-                    href="https://wa.me/1234567890?text=Quiero%20saber%20más%20sobre%20el%20ecosistema%20Irrelevant"
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="text-irrelevant-primary font-semibold text-sm hover:underline"
-                  >
-                    Saber más →
-                  </a>
-                </div>
-              )}
-            </div>
+              </div>
+            ) : (
+              <div className="flex items-center justify-between mt-6 bg-irrelevant-background/30 rounded-lg p-4 border border-irrelevant-border/50">
+                <span className="text-irrelevant-textSecondary text-sm">
+                  Descubre cómo esta solución se integra con el resto del ecosistema
+                </span>
+                <a 
+                  href="https://wa.me/573183351733?text=Quiero%20saber%20más%20sobre%20el%20ecosistema%20Irrelevant%20Quotes"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-irrelevant-primary font-semibold text-sm hover:underline"
+                >
+                  Saber más →
+                </a>
+              </div>
+            )}
           </div>
         </div>
-        
-       
-        {/* CTA Section */}
-        <div className="mt-12 text-center">
-          <p className="text-lg max-w-3xl mx-auto text-irrelevant-textSecondary mb-6">
-            Descubre cómo el ecosistema completo de Irrelevant puede transformar tu empresa eliminando tareas manuales y automatizando procesos clave
-          </p>
-          <a 
-            href="https://wa.me/1234567890?text=Quiero%20conocer%20más%20del%20ecosistema%20completo%20Irrelevant"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30"
-          >
-            <span className="inline-flex items-center font-bold">
-              EXPLORAR TODO EL ECOSISTEMA
-            </span>
-          </a>
-        </div>
       </div>
-    </section>
-  );
+      
+     
+      {/* CTA Section */}
+      <div className="mt-12 text-center">
+        <p className="text-lg max-w-3xl mx-auto text-irrelevant-textSecondary mb-6">
+          Descubre cómo el ecosistema completo de Irrelevant Quotes puede transformar tu proceso de ventas, mejorando tus tasas de conversión y optimizando el tiempo de tu equipo comercial
+        </p>
+        <a 
+          href="https://wa.me/573183351733?text=Quiero%20conocer%20más%20del%20ecosistema%20completo%20Irrelevant%20Quotes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-irrelevant-primary/30"
+        >
+          <span className="inline-flex items-center font-bold">
+            EXPLORAR TODO EL ECOSISTEMA
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+);
 };
 
 export default EcosystemSection;

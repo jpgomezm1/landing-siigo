@@ -13,7 +13,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-sm text-irrelevant-textSecondary mb-6 max-w-md">
-              Transformando empresas a través de la automatización inteligente de procesos contables y comerciales. La solución definitiva para facturación y causación automatizada, compatible con Siigo.
+              Transformando empresas a través de la automatización inteligente de procesos comerciales. La solución definitiva para tus cotizaciones, compatible con tu CRM.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-irrelevant-textSecondary hover:text-irrelevant-primary transition-colors">
@@ -39,16 +39,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Solutions - simplified */}
-          <div className="md:col-span-3">
-            <h3 className="text-lg font-bold mb-4">Soluciones</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Facturación Automatizada</a></li>
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Causación Inteligente</a></li>
-              <li><a href="#" className="text-irrelevant-textSecondary hover:text-white transition-colors">Agente Contable IA</a></li>
-            </ul>
-          </div>
-          
+
           {/* Contact - simplified */}
           <div className="md:col-span-4">
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
@@ -68,7 +59,7 @@ const Footer = () => {
               
               <li className="pt-3">
                 <a 
-                  href="https://wa.me/1234567890?text=Hola%20Irrelevant,%20quiero%20más%20información"
+                  href="https://wa.me/573183351733?text=Hola%20Irrelevant,%20quiero%20más%20información"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full bg-irrelevant-primary/20 hover:bg-irrelevant-primary/30 text-irrelevant-primary py-2 px-4 rounded-lg transition-colors"

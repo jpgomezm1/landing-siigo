@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
-const EnhancedBillingHeroSection = () => {
+const EnhancedQuotesHeroSection = () => {
   const videoRef = useRef();
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -10,13 +10,13 @@ const EnhancedBillingHeroSection = () => {
   
   // Datos para animación de números
   const [counters, setCounters] = useState({
-    hoursPerWeek: 0,
-    paperReduction: 0,
-    errorReduction: 0
+    closingRate: 0,
+    followUpEfficiency: 0,
+    timeReduction: 0
   });
   
   // Estados para animaciones de documentos
-  const [showInvoice, setShowInvoice] = useState(false);
+  const [showQuote, setShowQuote] = useState(false);
   const [showCheckmark, setShowCheckmark] = useState(false);
   
   // Efecto para seguimiento del mouse para efectos parallax
@@ -57,9 +57,9 @@ const EnhancedBillingHeroSection = () => {
       await controls.start({ opacity: 1, scale: 1, transition: { duration: 0.5 } });
       setIsLoaded(true);
       
-      // Iniciar la secuencia de animación de facturas después de cargar
+      // Iniciar la secuencia de animación de cotizaciones después de cargar
       setTimeout(() => {
-        setShowInvoice(true);
+        setShowQuote(true);
         setTimeout(() => {
           setShowCheckmark(true);
         }, 1500);
@@ -68,9 +68,9 @@ const EnhancedBillingHeroSection = () => {
       // Iniciar las animaciones de contador
       const counterInterval = setInterval(() => {
         setCounters(prev => ({
-          hoursPerWeek: Math.min(prev.hoursPerWeek + 1, 20),
-          paperReduction: Math.min(prev.paperReduction + 2, 90),
-          errorReduction: Math.min(prev.errorReduction + 3, 99)
+          closingRate: Math.min(prev.closingRate + 1, 35),
+          followUpEfficiency: Math.min(prev.followUpEfficiency + 2, 90),
+          timeReduction: Math.min(prev.timeReduction + 3, 75)
         }));
       }, 50);
       
@@ -144,7 +144,7 @@ const EnhancedBillingHeroSection = () => {
           const size = Math.random() * 4 + 2;
           const depth = Math.random() * 5 + 1;
           const speed = 15 + Math.random() * 25;
-          const values = ["$", "%", "#", "0", "1", "9", "+", "-"];
+          const values = ["$", "%", "#", "👁️", "📊", "🔍", "+", "✓"];
           const randValue = values[Math.floor(Math.random() * values.length)];
           
           return (
@@ -245,8 +245,8 @@ const EnhancedBillingHeroSection = () => {
     );
   };
   
-  // Componente para el efecto de facturas flotantes
-  const FloatingInvoices = () => {
+  // Componente para el efecto de cotizaciones flotantes
+  const FloatingQuotes = () => {
     return (
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(4)].map((_, i) => {
@@ -279,7 +279,7 @@ const EnhancedBillingHeroSection = () => {
                 ease: "easeInOut"
               }}
             >
-              {/* Líneas de texto simuladas */}
+              {/* Líneas de cotización simuladas */}
               <div className="h-full w-full p-2 flex flex-col justify-between overflow-hidden">
                 <div className="w-full flex justify-between items-center mb-1">
                   <div className="w-1/2 h-2 bg-irrelevant-primary/20 rounded-full"></div>
@@ -299,8 +299,8 @@ const EnhancedBillingHeroSection = () => {
     );
   };
 
-  // Efecto de scanner de documentos
-  const ScannerEffect = () => {
+  // Efecto de análisis de cotizaciones
+  const AnalyticsEffect = () => {
     return (
       <motion.div
         className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 z-10"
@@ -331,9 +331,9 @@ const EnhancedBillingHeroSection = () => {
     return (
       <div className="absolute bottom-4 right-4 space-y-2 hidden lg:block">
         {[
-          { label: "Horas ahorradas/semana", value: counters.hoursPerWeek, suffix: "h" },
-          { label: "Reducción de papel", value: counters.paperReduction, suffix: "%" },
-          { label: "Reducción de errores", value: counters.errorReduction, suffix: "%" }
+          { label: "Aumento tasa de cierre", value: counters.closingRate, suffix: "%" },
+          { label: "Eficiencia en seguimiento", value: counters.followUpEfficiency, suffix: "%" },
+          { label: "Reducción de tiempo", value: counters.timeReduction, suffix: "%" }
         ].map((stat, i) => (
           <motion.div 
             key={i}
@@ -352,12 +352,12 @@ const EnhancedBillingHeroSection = () => {
     );
   };
 
-  // Componente para la animación principal de factura
-  const InvoiceProcessAnimation = () => {
+  // Componente para la animación principal de cotización
+  const QuoteProcessAnimation = () => {
     return (
       <div className="absolute top-1/2 transform -translate-y-1/2 right-8 hidden lg:block">
         <AnimatePresence>
-          {showInvoice && (
+          {showQuote && (
             <motion.div
               className="relative w-40 h-52 bg-white/10 backdrop-blur-md rounded-lg border border-irrelevant-primary/30 shadow-lg overflow-hidden"
               initial={{ opacity: 0, x: 100, rotateY: 90 }}
@@ -369,7 +369,7 @@ const EnhancedBillingHeroSection = () => {
                 damping: 20
               }}
             >
-              {/* Contenido de la factura */}
+              {/* Contenido de la cotización */}
               <div className="p-3 flex flex-col h-full">
                 <div className="flex justify-between items-center mb-2">
                   <div className="w-16 h-3 bg-irrelevant-primary/20 rounded-md"></div>
@@ -504,10 +504,10 @@ const EnhancedBillingHeroSection = () => {
       </div>
       
       {/* Advanced effects */}
-      <ScannerEffect />
+      <AnalyticsEffect />
       <DataParticles />
       <DataFlowEffect />
-      <FloatingInvoices />
+      <FloatingQuotes />
       
       {/* Content */}
       <div className="relative z-20 px-4 sm:px-6 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -538,7 +538,7 @@ const EnhancedBillingHeroSection = () => {
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
-              TUS FACTURAS DEBERÍAN 
+              TUS COTIZACIONES AHORA
             </motion.span>
             <motion.span 
               className="block bg-gradient-to-r from-irrelevant-primary to-purple-400 text-transparent bg-clip-text relative"
@@ -552,7 +552,7 @@ const EnhancedBillingHeroSection = () => {
               }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             >
-              HACERSE SOLAS
+              SON INTELIGENTES
             </motion.span>
           </motion.h1>
           
@@ -560,7 +560,7 @@ const EnhancedBillingHeroSection = () => {
             className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white mb-6 sm:mb-8"
             variants={itemVariants}
           >
-            Automatiza tu facturación y causación. Escala ventas sin aumentar costos operativos. 
+            Convierte leads calientes en ventas reales con cotizaciones que se rastrean automáticamente. 
             <motion.span 
               className="font-bold text-irrelevant-primary inline-block ml-1"
               animate={{ 
@@ -568,12 +568,12 @@ const EnhancedBillingHeroSection = () => {
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              En menos de 5 días estás facturando sin digitar.
+              Sabe exactamente cuándo actuar con cada cliente.
             </motion.span>
           </motion.p>
           
           <motion.a 
-            href="https://wa.me/1234567890?text=Quiero%20automatizar%20mi%20facturación%20con%20Irrelevant"
+            href="https://wa.me/573183351733?text=Quiero%20implementar%20Cotizaciones%20Inteligentes%20con%20Irrelevant"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-irrelevant-primary hover:bg-irrelevant-primary/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform shadow-lg shadow-irrelevant-primary/30 text-sm md:text-base w-full sm:w-auto self-center sm:self-start overflow-hidden relative"
@@ -585,7 +585,7 @@ const EnhancedBillingHeroSection = () => {
             whileTap={{ scale: 0.98 }}
           >
             <span className="inline-flex items-center justify-center font-bold relative z-10">
-              QUIERO AUTOMATIZAR MI FACTURACIÓN
+              QUIERO COTIZACIONES INTELIGENTES
               <motion.div 
                 className="ml-2 w-5 h-5"
                 animate={{ x: [0, 5, 0] }}
@@ -616,7 +616,7 @@ const EnhancedBillingHeroSection = () => {
                     <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Compatible 100% con Siigo"
+                text: "Seguimiento automático"
               },
               {
                 icon: (
@@ -624,7 +624,7 @@ const EnhancedBillingHeroSection = () => {
                     <path d="M12 4V6M12 8V12M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Potenciado por IA avanzada"
+                text: "Analytics en tiempo real"
               },
               {
                 icon: (
@@ -632,7 +632,7 @@ const EnhancedBillingHeroSection = () => {
                     <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Parte del ecosistema Irrelevant"
+                text: "Aumenta tasa de cierre"
               },
               {
                 icon: (
@@ -640,7 +640,7 @@ const EnhancedBillingHeroSection = () => {
                     <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                text: "Implementación en 5 días"
+                text: "Integrable con CRMs"
               }
             ].map((feature, i) => (
               <motion.div
@@ -673,12 +673,12 @@ const EnhancedBillingHeroSection = () => {
                     }
                   }}
                 />
-                </motion.div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
         
-        {/* Right column: Enhanced 3D Accountant Robot */}
+        {/* Right column: Enhanced 3D Quote Analytics Robot */}
         <motion.div 
           className="relative hidden lg:flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -691,7 +691,7 @@ const EnhancedBillingHeroSection = () => {
           }}
         >
           <div className="relative w-full max-w-md mx-auto">
-            {/* Digital data streams flowing around accountant */}
+            {/* Digital data streams flowing around the analytics dashboard */}
             <div className="absolute inset-0 pointer-events-none">
               {[...Array(8)].map((_, i) => {
                 const angle = (Math.PI * 2 / 8) * i;
@@ -730,7 +730,7 @@ const EnhancedBillingHeroSection = () => {
               })}
             </div>
             
-            {/* Floating invoices and documents */}
+            {/* Floating quotes and analytics cards */}
             <div className="absolute inset-0 pointer-events-none">
               {[
                 { top: "-20%", right: "10%", rotation: -15, delay: 0 },
@@ -762,7 +762,7 @@ const EnhancedBillingHeroSection = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  {/* Líneas de factura simuladas */}
+                  {/* Líneas de cotización simuladas */}
                   <div className="w-2/3 h-1 bg-white/30 rounded-full mb-1"></div>
                   <div className="w-full h-1 bg-white/20 rounded-full mb-1"></div>
                   <div className="w-1/2 h-1 bg-white/20 rounded-full mb-1"></div>
@@ -772,7 +772,7 @@ const EnhancedBillingHeroSection = () => {
               ))}
             </div>
             
-            {/* Glow effect behind accountant */}
+            {/* Glow effect behind dashboard */}
             <motion.div 
               className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 rounded-full blur-2xl"
               {...pulseAnimation}
@@ -790,14 +790,14 @@ const EnhancedBillingHeroSection = () => {
                 transform: `perspective(1200px) rotateX(${mousePosition.y * 2}deg) rotateY(${mousePosition.x * 2}deg)`
               }}
             >
-              {/* Accountant image with 3D floating effect */}
+              {/* Dashboard image with 3D floating effect */}
               <motion.div
                 className="relative z-10"
                 {...floatingAnimation}
               >
                 <img 
-                  src="https://storage.googleapis.com/cluvi/irrelevant-accountant.png" 
-                  alt="Robot Contador Irrelevant" 
+                  src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png" 
+                  alt="Dashboard de Cotizaciones Irrelevant" 
                   className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 0 20px rgba(96, 69, 255, 0.3))"
@@ -824,7 +824,7 @@ const EnhancedBillingHeroSection = () => {
                     }}
                   >
                     <img 
-                      src="https://storage.googleapis.com/cluvi/irrelevant-accountant.png"
+                      src="https://storage.googleapis.com/cluvi/Images%20Web%20irrelevant/sales-irrelevant.png"
                       alt=""
                       className="w-full h-auto max-h-[500px] object-contain"
                       style={{ 
@@ -836,7 +836,7 @@ const EnhancedBillingHeroSection = () => {
                 )}
               </AnimatePresence>
               
-              {/* Tech circles with information about AI capabilities */}
+              {/* Tech circles with information about analytics capabilities */}
               <motion.div 
                 className="absolute -bottom-4 -left-8 w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center overflow-hidden backdrop-blur-sm"
                 initial={{ scale: 0, opacity: 0 }}
@@ -862,7 +862,7 @@ const EnhancedBillingHeroSection = () => {
                   }}
                 />
                 <svg className="w-8 h-8 text-white relative z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 7H15M9 11H15M9 15H13M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </motion.div>
               
@@ -891,11 +891,11 @@ const EnhancedBillingHeroSection = () => {
                   }}
                 />
                 <svg className="w-7 h-7 text-white relative z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </motion.div>
               
-              {/* New AI functionality badge */}
+              {/* Tracking feature badge */}
               <motion.div
                 className="absolute -bottom-4 right-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg"
                 initial={{ scale: 0, opacity: 0 }}
@@ -905,12 +905,12 @@ const EnhancedBillingHeroSection = () => {
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none">
                   <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span>OCR Avanzado</span>
+                <span>Tracking en vivo</span>
               </motion.div>
               
-              {/* Calculator effect popup */}
+              {/* Visitor tracking popup */}
               <motion.div
-                className="absolute -top-10 left-4 bg-irrelevant-background/80 backdrop-blur-md p-2 rounded-lg border border-irrelevant-primary/20 shadow-lg w-24"
+                className="absolute -top-10 left-4 bg-irrelevant-background/80 backdrop-blur-md p-2 rounded-lg border border-irrelevant-primary/20 shadow-lg w-32"
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ 
                   opacity: [0, 1, 1, 0],
@@ -924,7 +924,7 @@ const EnhancedBillingHeroSection = () => {
                   repeatDelay: 8
                 }}
               >
-                <div className="text-xs font-mono text-right mb-1 bg-irrelevant-primary/10 p-1 rounded">
+                <div className="text-xs font-medium text-white mb-1">
                   <motion.span
                     animate={{
                       opacity: [1, 0, 1]
@@ -935,33 +935,25 @@ const EnhancedBillingHeroSection = () => {
                       repeatDelay: 1
                     }}
                   >
-                    15,349.50
+                    Carlos R. vio tu propuesta
                   </motion.span>
                 </div>
-                <div className="grid grid-cols-4 gap-1">
-                  {["7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "×", "0", ".", "=", "÷"].map((key, i) => (
-                    <motion.div
-                      key={i}
-                      className={`w-full h-4 flex items-center justify-center rounded text-[8px] 
-                        ${["=", "+", "-", "×", "÷"].includes(key) ? "bg-irrelevant-primary/30 text-white" : "bg-irrelevant-background/90 text-white/80"}`}
-                      whileHover={{ scale: 1.1 }}
-                      animate={key === "=" ? {
-                        scale: [1, 1.2, 1],
-                        backgroundColor: [
-                          "rgba(96, 69, 255, 0.3)",
-                          "rgba(96, 69, 255, 0.5)",
-                          "rgba(96, 69, 255, 0.3)"
-                        ]
-                      } : {}}
-                      transition={{
-                        duration: 1,
-                        repeat: key === "=" ? Infinity : 0,
-                        repeatDelay: 1
+                <div className="flex items-center justify-between">
+                  <div className="text-[10px] text-irrelevant-primary">hace 2 min</div>
+                  <div className="flex items-center">
+                    <motion.div 
+                      className="w-2 h-2 bg-green-500 rounded-full mr-1"
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [0.7, 1, 0.7],
                       }}
-                    >
-                      {key}
-                    </motion.div>
-                  ))}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                    />
+                    <span className="text-[10px] text-green-400">en línea</span>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -991,14 +983,23 @@ const EnhancedBillingHeroSection = () => {
         </motion.div>
       </div>
       
-      {/* Código de números flotantes en el fondo */}
+      {/* Código de números y métricas flotantes en el fondo */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[...Array(8)].map((_, i) => {
           const size = Math.random() * 10 + 8;
           const speed = 20 + Math.random() * 40;
-          const val = (Math.random() * 9999).toFixed(2);
-          const op = ["+", "-", "×", "÷"][Math.floor(Math.random() * 4)];
-          const isFormula = Math.random() > 0.5;
+          // Datos relevantes para cotizaciones y analytics
+          const metrics = [
+            "+35% conversión",
+            "3 vistas hoy",
+            "2min tiempo lectura",
+            "90% interés",
+            "7 días de ciclo",
+            "5 aperturas",
+            "2 compartidos",
+            "Reunión agendada"
+          ];
+          const metric = metrics[Math.floor(Math.random() * metrics.length)];
           
           return (
             <motion.div
@@ -1022,7 +1023,7 @@ const EnhancedBillingHeroSection = () => {
                 times: [0, 0.8, 1]
               }}
             >
-              {isFormula ? `${(Math.random() * 999).toFixed(2)} ${op} ${(Math.random() * 999).toFixed(2)}` : val}
+              {metric}
             </motion.div>
           );
         })}
@@ -1126,5 +1127,4 @@ const EnhancedBillingHeroSection = () => {
   );
 };
 
-export default EnhancedBillingHeroSection;
-                
+export default EnhancedQuotesHeroSection;
